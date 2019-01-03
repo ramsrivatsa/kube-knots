@@ -1,0 +1,113 @@
+In this section, we discuss different scheduling schemes that leverage \textit{Knots} framework to perform GPU-aware scheduling. These schemes are designed to leverage the design point findings from the Section \ref{sec:modeling}. 
+
+
+% \begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 0.3ex]
+
+% \item \textbf{GPU Sharing Disabled - } This scheme is built to leverage our \textit{Knots} orchestration layer which could take advantage of the real-time GPU utilization metrics. Since Knots can query the utilization aggregator, this guarantees the end-to-end QoS of the service queries.
+
+% \item \textbf{GPU Sharing Enabled - } expanded as Auto-Regressive Integrated Moving Average based scheduler, which uses moving window based regression to forecast the GPU resource usage to predict the device utilization.
+% \end{itemize}
+
+% \vspace{0.2in}
+\subsection{Uniform container scheduling}
+\textit{Kubernetes} uses uniform scheduling of containers (pods) which optimizes the use of one resource ( core utilization) through uniform bin packing and treats other resources (e.g., memory, I/O) as constraints. Note that, a GPU is considered as a scheduling constraint, while ignoring the actual device utilization. It uses static placement, which does not ensure load balancing. This scheme scales well with the increase in resources and always comes up with a possible bin packing mechanism for all applications. But, it does not allow sharing of resources across applications. The three application mixes shown in Table~\ref{tbl:appmix} are scheduled using uniform scheduler. We use this scheme as our baseline.
+
+Figure~\ref{fig:uniform} shows the utilization of each of the ten GPU nodes. Uniform scheduler is actually better in cases where the utilization is already high (for instance application-mix-1 from Figure~\ref{fig:app1}). \textit{Kubernetes} depends on application frameworks (for instance Spark \cite{spark}, Tensorflow) to manage its resources internally. From \textit{Design point 5}, we know that it is ideal to expose the application framework's parameters to the cluster scheduler to avoid any internal resource fragmentation as seen in Figure~\ref{fig:tf-frag} (TF - the top line in red consuming 98\% of the memory). Instead, these idle resources could be allocated to the pending pods by sharing the resource. We configured the Tensorflow (TF)'s GPU configuration parameters in such a way that the framework does not subscribe to the entire GPU memory by allowing memory growth for each task. This enables us to pack the GPUs with other pending pods leading to the second scheme.
+
+\vspace{-0.1in}
+\subsection{Resource agnostic sharing}
+We enable scheduling of multiple containers (pods) on a single GPU by modifying the Nvidia's k8s-device-plugin~\cite{k8s} for Kubernetes. We used first fit decreasing order bin-packing algorithm which greatly improves the average GPU utilization and job turnaround times hiding the container start-up latencies. This trend is consistent with our previous observations that led to \textbf{Design point 1}. GPU-sharing satisfies the \textbf{Design points 1 \& 3} which is maximizing the utilization by enabling  resource sharing and keeping the utilization high for power proportionality respectively. However, it fails to consider the actual GPU utilization, while scheduling and this leads to severe QoS and capacity violations (discussed in \textbf{Design Point 2}). When GPU sharing is enabled, it is important that the cluster-wide resource scheduler should take the application characteristics and the resource utilization to safely schedule the containers (pods). At production scale it becomes an overhead to guarantee the pod safety. Hence, \textit{Kubernetes} does not explore sharing as an option, which led to our next scheme.
+\vspace{-0.1in}
+\subsection{Correlation Based Provisioning}
+Following the observations made from Alibaba cluster trace, in order to make effective scheduling decisions, the correlation between the utilization metrics must be used for proactive application placement, especially when GPU sharing is enabled. Since \textit{Knots} leverages the utilization aggregator to collect the real-time utilization statistics from the GPU, the scheduler can leverage this information to predict whether the pods can be co-located. For example, two pods positively correlating for using the GPU memory should be scheduled to different GPU nodes as the pods have a high probability of memory capacity violations when co-located. Note that, such capacity violations can lead to container crashing and relaunching. Although the relaunch latency is typically in the order of few seconds, the tasks when relaunched cannot be prioritized over tasks of other pods that are already ahead on the queue. In this case, this particular heavy tailed task affects the overall job completion time. Therefore, the correlation based prediction (CBP) scheduler avoids co-locating two positively correlating pods for any metric such as memory, SM load and bandwidth.
+
+%Therefore, if we size applications based on dominant resource metric~\citep{Ghodsi:2011:DRF:1972457.1972490} agnostic of their correlation metric, there is a high chance of QoS violation due to heavy-tailed tasks.
+
+As we observed in Figure~\ref{fig:rodinia-peaks}, all the representative GPU batch workloads have significantly low peak resource usage for most of their execution. For example, SM utilization has a 90x difference between its median and peak. Similarly, bandwidth utilization differs by 400x between the median and peak. The application uses the whole allocated capacity only for 6\% of the total execution time, but it is always provisioned for the peak utilization . This leads to resource fragmentation and underutilization. Hence, this property can be exploited by pod resizing. For example, if two uncorrelated applications are containerized as pods and placed individually, they have an X\% probability of failure. Whereas if they are co-located, they have a probability of failing together, which is $1-( {1 - X})^2$. Hence, provisioning based on an average usage and packing uncorrelated applications together can lead to potential savings over res-ag scheduling. We call this scheme correlation based provisioning (CBP) which resizes the uncorrelated pods for efficient packing on GPUs.
+
+CBP scheduler takes \textit{\textbf{O$(N^2d)$}} to find the optimal placement where N is the number of pending pods and \textit{\textbf{d}} being the time-series window size which is a crucial configuration parameter that determines the scheduling accuracy. CBP scheduler bin packs the uncorrelated applications together by resizing their respective pods for a common case (90$^{th}$ percentile consumption) than for the maximum case. We conservatively provision for 90$^{th}$ percentile, since aggressive provisioning (Viz. 50$^{th}$, 60$^{th}$, etc.) affects docker performance and constant resizing makes the GPU docker environment unstable. CBP is based on our observations that the probability of all co-located pods reaching their peak consumption at the same time is very low. Thus, CBP is aware of both utilization and the pod's correlation metrics. However, due to conservative provisioning the GPUs are still under-utilized. This could be also due to the interarrival pattern of pods, since there are not enough negatively correlating pods to co-locate which results in a skewed schedule order. This indirectly restricts the potential number of GPU nodes to schedule the pods and results in increased queue waiting times for the pending pods which are positively correlating. The average pod waiting time worsens especially in case of heavily loaded application-mix. Pod affinities would further restrict scheduling options for correlating pods. This leads us to our next scheme that attempts to co-locate two positively correlated pods in the same node by predicting the peak resource demand phases of the scheduled pods.
+
+
+\subsection{Peak Prediction Scheduler}
+Peak Prediction scheduler is built on top of CBP to further exploit the temporal nature of peak resource consumption within an application. This allows PP to schedule two positively correlating pods to the same GPU as they may not contend for the resource at the same time. This is due to the fact that a single application goes through several phase changes during its course of execution. For instance, a DNN instance query first loads the inference weights from the host which results in peak input bandwidth consumption, this is followed by the next phase of the application that is the compute/memory intensive phase. This trend is also very evident in batch workloads as seen in Figure~\ref{fig:rodinia-peaks}. Thus, the peak bandwidth consumption of an application is an early indicator of subsequent compute and memory peaks. Likewise, within an application, the consecutive peak resource demand trends can be predicted using the auto-correlation function given in Equation~\ref{eqn:auto}, r$_{k}$ being the auto-correlation value where Y$_{i}$ is the utilization measurement at a given time, $\bar{Y}$ is the moving average of Y, and n is the total number of events record at a time window T. 
+
+\begin{equation} 
+r_{k} = \frac{\Sigma{_{i=1}^{n-k}} (Y_i - \bar{Y})(Y_{i+k} - \bar{Y})} {\Sigma{_{i=1}^{n}}{(Y_i - \bar{Y})}^2}
+\label{eqn:auto}
+\end{equation}
+
+The utilization metric can be further forecasted to anticipate the future GPU utilization using non-seasonal Auto-Regressive Integrated Moving Average(ARIMA). The interval between two consecutive peak resource consumption of a particular resource could be determined by the auto-correlation factor. If the auto-correlation value of a series (i.e., memory utilization) is zero or negative then it shows that (i) the input time-series data is limited or (ii) the trend is not strong enough to predict a positive correlation. In case of correlation value being greater than 0, we use first-order ARIMA to forecast the utilization of the GPU for the next one second as given in Equation~\ref{eqn:arima} below which is a moving window based linear regression where $\hat{Y}$$_{pred}$ is a predicted utilization value from previous utilization timeseries $Y_{t-1}$, where $\phi$ is the slope of the line and $\mu$ is the intercept.
+    \begin{equation} 
+    \hat{Y}_{pred} = \mu + \phi_{1} Y_{t-1}
+    \label{eqn:arima}
+    \end{equation}
+
+ 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{algorithm}
+\caption{ CBP + Peak Prediction Scheduler}
+\begin{algorithmic}[]
+%\footnotesize
+%\Procedure{Recursion}{$a$}
+%\State $a\gets\textsc{Recursion}(a)$ \Comment{Call Recursion again}
+%\EndProcedure
+\NoDoFor{\textit{gpu\_node in $\forall          all\_gpu\_nodes$}}
+\If{isActive(\textit{QUERY(gpu\_node)})}
+
+\State$\textit{All\_Active\_GPUs.append}(\textit{gpu\_node})$
+\EndIf
+\EndFor
+\State$\textit{Node\_List} \gets \textit{Sort\_by\_Free\_Memory(\textit{All\_Active\_GPUs})}$
+\State$\textit{Pending\_Apps} \gets \textit{Sort\_Apps\_by\_Memory\_Size(Apps)}$
+\State$\textit{Resized\_apps} \gets \textit{Docker\_Resize(Node\_List,Pend\_Apps)}$
+\State$\textit{Selected\_Node} \gets \textit{Head(Node\_list)}$
+\NoDoFor{\textit{App in Pend\_Apps}}
+\State$\textit{Schedule(app,Selected\_Node)}$
+\EndFor
+\Procedure{Query(\textit{GPU\_node})}{}
+
+\State$\textit{node\_stats\_mem} \gets \textit{query\_db(gpu\_node.memory)}$
+\State$\textit{node\_stats\_sm} \gets\textit{query\_db(gpu\_node.sm)}$
+\State$\textit{node\_stats\_tx} \gets\textit{query\_db(gpu\_node.tx\_band)}$
+\State$\textit{node\_stats\_rx} \gets\textit{query\_db(gpu\_node.rx\_band)}$
+\State$\textit{node\_stats} \gets \textit{node\_stats\_mem} + \textit{node\_stats\_sm} + \textit{node\_stats\_bw}$
+\State$\Return \textit{   node\_stats}$
+\EndProcedure
+
+\Procedure{Schedule(\textit{App, Selected\_Node})}{}
+\If{\textit{Can\_Co-locate}(\textit{Covariance,App,Selected\_Node})}
+\State$\textit{Ship\_Container(App,Selected\_Node)}$
+\Else{}\\
+
+\If{\textit{AutoCorrelation(node$.$memory)}} \Comment{\textbf{\textit{Eqn \ref{eqn:auto}}} }
+\State$ \textit{pred\_free\_mem} \gets \textit{ARIMA(node$.$mem)}$
+\If{\textit{pred\_mem $\ge$ App$.$memory }}
+\State$\textit{Schedule(app)}$
+\Else{}
+\State$\textit{Schedule}(\textit{App,Head$\,\to\,$Next(Node\_list})$
+\EndIf
+\EndIf
+\EndIf
+\EndProcedure
+% \Procedure{Compute\_CRV(Constraint)}{}
+%  \State
+% \EndProcedure
+\end{algorithmic}
+\label{algo}
+\end{algorithm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Note that, the correlation between consecutive peak resource consumption is a better indicator than the correlation across complete runtime of the application. Also, forecasting the GPU utilization enables the system scheduler to predict the performance better and guarantee the QoS of the application which would be scheduled to that particular GPU node. The peak prediction scheme identifies the set of pods that attains peak consumption of a resource at the same time and schedules them to different GPU nodes.
+
+Algorithm~\ref{algo} captures the workflow of the scheduler, where for all the active GPU nodes in the datacenter, the utilization for the past five seconds is queried from the respective influxdb databases. This timeseries window could be adjusted for prediction accuracy. The utilization aggregator in the headnode sorts the nodes by free memory available for the most recent timestamp. The schedule order of pending pods is sorted based first fit decreasing order of pod's requested memory and resized for 90$^{th}$ percentile memory consumption. The \texttt{Select\_Node} function further analyzes the correlation in case of CBP and schedules to the \texttt{Selected\_Node} in case of the correlation value is less than 0.5. In case of PP, the auto-correlation function is used on the utilization time-series data for a particular metric(memory\_used) of the selected node to look for a trend which predicts a possibility of an impending peak resource consumption to occur through ARIMA, in that case schedule to the next available node in the list by repeating the same admission checks. Once the node is selected, the pod is shipped to the node using \textit{Kubernetes}'s python-based client API calls.
+
+
+% However, two applications with correlated peaks may still be co-located. 
+% 3) Co-located applications that do peak together can use a common buffer for their peaks, and each has a reservation equal to an off-peak value. Using these ideas first to identify clusters of applications with correlated peaks,  one may observe that the number of such clusters may become very large if we use the original time series with the complete range of values. Hence, Peak uses a novel two-level envelop of the original time-series of each application for clustering. The envelope has a single value to represent all CPU utilization for the body of the distribution and another value for all points in the tail of the distribution. On each active server, it then reserves space for each cluster in proportion to the size (lower level of the envelope) of the applications in that cluster and keeps a buffer space equal to the maximum peak across all clusters. Each application cluster narrows down a set of applications for its reservation.
+
+
+

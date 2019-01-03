@@ -1,0 +1,15 @@
+Looking forward, we are exploring schedule policies to optimize for the datacenter-wide GPU energy efficiency to reduce the TCO. We discuss some of the future directions and possible outcomes from our evaluation framework.
+
+%\begin{itemize}[wide, nosep, labelindent = 0pt, topsep = 0.5ex]
+%\item \textbf{Topology aware scheduling -} Distributed accelerator libraries like Tensorflow that scale across multiple GPUs are unaware of GPU topology which poses challenges for topology-aware scheduling.
+
+\item \textbf{Application scaling behavior -} The DNN workloads are often compute intensive and generally benefits with more number of SMs, but from the traces, we observe certain sub-class of workloads for which its scaling is bottlenecked by memory bandwidth. These applications could be orchestrated to run on GPUs like M40 or K80 which has a relatively lesser number of SMs instead of P100s for energy efficiency.
+
+\item \textbf{Container power budget and priority -} The newer Volta architectures enable fine-grain space sharing of GPU resources across different CUDA applications in a single container via MPS (Multi-Process Sharing). However multi-container support is still not possible on Volta which restricts the fine grain resource management across multiple containerized applications. This feature would enable \textit{Kube-Knots} to orchestrate based on custom priorities and power budgets at a container granularity.
+
+\item \textbf{FPGA support -} We plan to extend \textit{Knots} orchestration framework for other accelerators like FPGAs when the Kubernetes device plug-in support for FPGAs is enabled. In case of FPGAs, the bit-stream downloading from the host takes time in the order of seconds. Proactive capacity planning of FPGAs resources would mitigate the launch overheads and queuing delays.
+
+\item \textbf{Container shipping overheads -} Multi-GB container shipping overheads could be mitigated by scheduling to a node with pre-existing docker image for the same container. Container shipping and launch latency could be masked by overlapping concurrent kernels on GPUs through proactive admission control.
+\end{itemize}
+
+In future, we are planning to make the \textit{Kube-Knots} framework and the accelerator traces open-source. We strongly believe it would be conducive to both the systems and architecture researchers to introspect further into cluster-wide challenges of GPU-based datacenters.

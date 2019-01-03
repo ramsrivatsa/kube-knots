@@ -1,0 +1,2330 @@
+%%% ====================================================================
+%%%  BibTeX-file{
+%%%     author          = "Gerry Murray",
+%%%     version         = "1.2",
+%%%     date            = "2 April 2012",
+%%%     filename        = "acmsmall-sample-bibfile.bib",
+%%%     address         = "ACM, NY",
+%%%     email           = "murray at hq.acm.org",
+%%%     codetable       = "ISO/ASCII",
+%%%     keywords        = "ACM Reference Format, bibliography, citation, references",
+%%%     supported       = "yes",
+%%%     docstring       = "This BibTeX database file contains 'bibdata' entries
+%%%                        that 'match' the examples provided in the Specifications Document
+%%%                        AND, also, 'legacy'-type bibs. It should assist authors in
+%%%                        choosing the 'correct' at-bibtype and necessary bib-fields
+%%%                        so as to obtain the appropriate ACM Reference Format output.
+%%%                        It also contains many 'Standard Abbreviations'. "
+%%%  }
+%%% ====================================================================
+
+% Journals
+
+% First the Full Name is given, then the abbreviation used in the AMS Math
+% Reviews, with an indication if it could not be found there.
+% Note the 2nd overwrites the 1st, so swap them if you want the full name.
+
+ %{AMS}
+ @String{AMSTrans = "American Mathematical Society Translations" }
+ @String{AMSTrans = "Amer. Math. Soc. Transl." }
+ @String{BullAMS = "Bulletin of the American Mathematical Society" }
+ @String{BullAMS = "Bull. Amer. Math. Soc." }
+ @String{ProcAMS = "Proceedings of the American Mathematical Society" }
+ @String{ProcAMS = "Proc. Amer. Math. Soc." }
+ @String{TransAMS = "Transactions of the American Mathematical Society" }
+ @String{TransAMS = "Trans. Amer. Math. Soc." }
+
+ %ACM
+ @String{CACM = "Communications of the {ACM}" }
+ @String{CACM = "Commun. {ACM}" }
+ @String{CompServ = "Comput. Surveys" }
+ @String{JACM = "J. ACM" }
+ @String{ACMMathSoft = "{ACM} Transactions on Mathematical Software" }
+ @String{ACMMathSoft = "{ACM} Trans. Math. Software" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newsletter" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newslett." }
+
+ @String{AmerSocio = "American Journal of Sociology" }
+ @String{AmerStatAssoc = "Journal of the American Statistical Association" }
+ @String{AmerStatAssoc = "J. Amer. Statist. Assoc." }
+ @String{ApplMathComp = "Applied Mathematics and Computation" }
+ @String{ApplMathComp = "Appl. Math. Comput." }
+ @String{AmerMathMonthly = "American Mathematical Monthly" }
+ @String{AmerMathMonthly = "Amer. Math. Monthly" }
+ @String{BIT = "{BIT}" }
+ @String{BritStatPsych = "British Journal of Mathematical and Statistical
+          Psychology" }
+ @String{BritStatPsych = "Brit. J. Math. Statist. Psych." }
+ @String{CanMathBull = "Canadian Mathematical Bulletin" }
+ @String{CanMathBull = "Canad. Math. Bull." }
+ @String{CompApplMath = "Journal of Computational and Applied Mathematics" }
+ @String{CompApplMath = "J. Comput. Appl. Math." }
+ @String{CompPhys = "Journal of Computational Physics" }
+ @String{CompPhys = "J. Comput. Phys." }
+ @String{CompStruct = "Computers and Structures" }
+ @String{CompStruct = "Comput. \& Structures" }
+ @String{CompJour = "The Computer Journal" }
+ @String{CompJour = "Comput. J." }
+ @String{CompSysSci = "Journal of Computer and System Sciences" }
+ @String{CompSysSci = "J. Comput. System Sci." }
+ @String{Computing = "Computing" }
+ @String{ContempMath = "Contemporary Mathematics" }
+ @String{ContempMath = "Contemp. Math." }
+ @String{Crelle = "Crelle's Journal" }
+ @String{GiornaleMath = "Giornale di Mathematiche" }
+ @String{GiornaleMath = "Giorn. Mat." } % didn't find in AMS MR., ibid.
+
+ %IEEE
+ @String{Computer = "{IEEE} Computer" }
+ @String{IEEETransComp = "{IEEE} Transactions on Computers" }
+ @String{IEEETransComp = "{IEEE} Trans. Comput." }
+ @String{IEEETransAC = "{IEEE} Transactions on Automatic Control" }
+ @String{IEEETransAC = "{IEEE} Trans. Automat. Control" }
+ @String{IEEESpec = "{IEEE} Spectrum" } % didn't find in AMS MR
+ @String{ProcIEEE = "Proceedings of the {IEEE}" }
+ @String{ProcIEEE = "Proc. {IEEE}" } % didn't find in AMS MR
+ @String{IEEETransAeroElec = "{IEEE} Transactions on Aerospace and Electronic
+     Systems" }
+ @String{IEEETransAeroElec = "{IEEE} Trans. Aerospace Electron. Systems" }
+
+ @String{IMANumerAna = "{IMA} Journal of Numerical Analysis" }
+ @String{IMANumerAna = "{IMA} J. Numer. Anal." }
+ @String{InfProcLet = "Information Processing Letters" }
+ @String{InfProcLet = "Inform. Process. Lett." }
+ @String{InstMathApp = "Journal of the Institute of Mathematics and
+     its Applications" }
+ @String{InstMathApp = "J. Inst. Math. Appl." }
+ @String{IntControl = "International Journal of Control" }
+ @String{IntControl = "Internat. J. Control" }
+ @String{IntNumerEng = "International Journal for Numerical Methods in
+     Engineering" }
+ @String{IntNumerEng = "Internat. J. Numer. Methods Engrg." }
+ @String{IntSuper = "International Journal of Supercomputing Applications" }
+ @String{IntSuper = "Internat. J. Supercomputing Applic." } % didn't find
+%% in AMS MR
+ @String{Kibernetika = "Kibernetika" }
+ @String{JResNatBurStand = "Journal of Research of the National Bureau
+     of Standards" }
+ @String{JResNatBurStand = "J. Res. Nat. Bur. Standards" }
+ @String{LinAlgApp = "Linear Algebra and its Applications" }
+ @String{LinAlgApp = "Linear Algebra Appl." }
+ @String{MathAnaAppl = "Journal of Mathematical Analysis and Applications" }
+ @String{MathAnaAppl = "J. Math. Anal. Appl." }
+ @String{MathAnnalen = "Mathematische Annalen" }
+ @String{MathAnnalen = "Math. Ann." }
+ @String{MathPhys = "Journal of Mathematical Physics" }
+ @String{MathPhys = "J. Math. Phys." }
+ @String{MathComp = "Mathematics of Computation" }
+ @String{MathComp = "Math. Comp." }
+ @String{MathScand = "Mathematica Scandinavica" }
+ @String{MathScand = "Math. Scand." }
+ @String{TablesAidsComp = "Mathematical Tables and Other Aids to Computation" }
+ @String{TablesAidsComp = "Math. Tables Aids Comput." }
+ @String{NumerMath = "Numerische Mathematik" }
+ @String{NumerMath = "Numer. Math." }
+ @String{PacificMath = "Pacific Journal of Mathematics" }
+ @String{PacificMath = "Pacific J. Math." }
+ @String{ParDistComp = "Journal of Parallel and Distributed Computing" }
+ @String{ParDistComp = "J. Parallel and Distrib. Comput." } % didn't find
+%% in AMS MR
+ @String{ParComputing = "Parallel Computing" }
+ @String{ParComputing = "Parallel Comput." }
+ @String{PhilMag = "Philosophical Magazine" }
+ @String{PhilMag = "Philos. Mag." }
+ @String{ProcNAS = "Proceedings of the National Academy of Sciences
+                    of the USA" }
+ @String{ProcNAS = "Proc. Nat. Acad. Sci. U. S. A." }
+ @String{Psychometrika = "Psychometrika" }
+ @String{QuartMath = "Quarterly Journal of Mathematics, Oxford, Series (2)" }
+ @String{QuartMath = "Quart. J. Math. Oxford Ser. (2)" }
+ @String{QuartApplMath = "Quarterly of Applied Mathematics" }
+ @String{QuartApplMath = "Quart. Appl. Math." }
+ @String{RevueInstStat = "Review of the International Statisical Institute" }
+ @String{RevueInstStat = "Rev. Inst. Internat. Statist." }
+
+ %SIAM
+ @String{JSIAM = "Journal of the Society for Industrial and Applied
+     Mathematics" }
+ @String{JSIAM = "J. Soc. Indust. Appl. Math." }
+ @String{JSIAMB = "Journal of the Society for Industrial and Applied
+     Mathematics, Series B, Numerical Analysis" }
+ @String{JSIAMB = "J. Soc. Indust. Appl. Math. Ser. B Numer. Anal." }
+ @String{SIAMAlgMeth = "{SIAM} Journal on Algebraic and Discrete Methods" }
+ @String{SIAMAlgMeth = "{SIAM} J. Algebraic Discrete Methods" }
+ @String{SIAMAppMath = "{SIAM} Journal on Applied Mathematics" }
+ @String{SIAMAppMath = "{SIAM} J. Appl. Math." }
+ @String{SIAMComp = "{SIAM} Journal on Computing" }
+ @String{SIAMComp = "{SIAM} J. Comput." }
+ @String{SIAMMatrix = "{SIAM} Journal on Matrix Analysis and Applications" }
+ @String{SIAMMatrix = "{SIAM} J. Matrix Anal. Appl." }
+ @String{SIAMNumAnal = "{SIAM} Journal on Numerical Analysis" }
+ @String{SIAMNumAnal = "{SIAM} J. Numer. Anal." }
+ @String{SIAMReview = "{SIAM} Review" }
+ @String{SIAMReview = "{SIAM} Rev." }
+ @String{SIAMSciStat = "{SIAM} Journal on Scientific and Statistical
+     Computing" }
+ @String{SIAMSciStat = "{SIAM} J. Sci. Statist. Comput." }
+
+ @String{SoftPracExp = "Software Practice and Experience" }
+ @String{SoftPracExp = "Software Prac. Experience" } % didn't find in AMS MR
+ @String{StatScience = "Statistical Science" }
+ @String{StatScience = "Statist. Sci." }
+ @String{Techno = "Technometrics" }
+ @String{USSRCompMathPhys = "{USSR} Computational Mathematics and Mathematical
+     Physics" }
+ @String{USSRCompMathPhys = "{U. S. S. R.} Comput. Math. and Math. Phys." }
+ @String{VLSICompSys = "Journal of {VLSI} and Computer Systems" }
+ @String{VLSICompSys = "J. {VLSI} Comput. Syst." }
+ @String{ZAngewMathMech = "Zeitschrift fur Angewandte Mathematik und
+     Mechanik" }
+ @String{ZAngewMathMech = "Z. Angew. Math. Mech." }
+ @String{ZAngewMathPhys = "Zeitschrift fur Angewandte Mathematik und Physik" }
+ @String{ZAngewMathPhys = "Z. Angew. Math. Phys." }
+
+% Publishers % ================================================= |
+
+ @String{Academic = "Academic Press" }
+ @String{ACMPress = "{ACM} Press" }
+ @String{AdamHilger = "Adam Hilger" }
+ @String{AddisonWesley = "Addison-Wesley" }
+ @String{AllynBacon = "Allyn and Bacon" }
+ @String{AMS = "American Mathematical Society" }
+ @String{Birkhauser = "Birkha{\"u}ser" }
+ @String{CambridgePress = "Cambridge University Press" }
+ @String{Chelsea = "Chelsea" }
+ @String{ClaredonPress = "Claredon Press" }
+ @String{DoverPub = "Dover Publications" }
+ @String{Eyolles = "Eyolles" }
+ @String{HoltRinehartWinston = "Holt, Rinehart and Winston" }
+ @String{Interscience = "Interscience" }
+ @String{JohnsHopkinsPress = "The Johns Hopkins University Press" }
+ @String{JohnWileySons = "John Wiley and Sons" }
+ @String{Macmillan = "Macmillan" }
+ @String{MathWorks = "The Math Works Inc." }
+ @String{McGrawHill = "McGraw-Hill" }
+ @String{NatBurStd = "National Bureau of Standards" }
+ @String{NorthHolland = "North-Holland" }
+ @String{OxfordPress = "Oxford University Press" }  %address Oxford or London?
+ @String{PergamonPress = "Pergamon Press" }
+ @String{PlenumPress = "Plenum Press" }
+ @String{PrenticeHall = "Prentice-Hall" }
+ @String{SIAMPub = "{SIAM} Publications" }
+ @String{Springer = "Springer-Verlag" }
+ @String{TexasPress = "University of Texas Press" }
+ @String{VanNostrand = "Van Nostrand" }
+ @String{WHFreeman = "W. H. Freeman and Co." }
+
+%Entries
+
+@inproceedings{kang2017convgpu,
+  title={ConVGPU: GPU Management Middleware in Container Based Virtualized Environment},
+  author={Kang, Daeyoun and Jun, Tae Joon and Kim, Dohyeun and Kim, Jaewook and Kim, Daeyoung},
+  booktitle={Cluster Computing (CLUSTER), 2017 IEEE International Conference on},
+  pages={301--309},
+  year={2017},
+  organization={IEEE}
+}
+@misc{amazon,
+  title = {{Amazon EC2 Elastic GPUs}},
+  howpublished = {\url{https://aws.amazon.com/ec2/elastic-gpus/}}
+  }
+  @misc{InfluxDB,
+  title = {{InfluxDB time series}},
+  howpublished = {\url{  https://github.com/influxdata/influxdb
+}}
+  }
+
+  
+@article{Weideman:2000:MDM:365723.365727,
+ author = {Weideman, J. A. and Reddy, S. C.},
+ title = {A MATLAB Differentiation Matrix Suite},
+ journal = {ACM Trans. Math. Softw.},
+ issue_date = {Dec. 2000},
+ volume = {26},
+ number = {4},
+ month = dec,
+ year = {2000},
+ issn = {0098-3500},
+ pages = {465--519},
+ numpages = {55},
+ url = {http://doi.acm.org/10.1145/365723.365727},
+ doi = {10.1145/365723.365727},
+ acmid = {365727},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {MATLAB, differentiation matrices, pseudospectral methods, spectral collocation methods},
+} 
+
+@misc{microsoft,
+  title = {{Microsoft VM with GPU}},
+  howpublished = {\url{https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes-gpu
+}}}
+
+@misc{cisco,
+  title = {{Cisco's Global Cloud Index}},
+  howpublished = {\url{https://www.cisco.com/c/en/us/solutions/collateral/service-provider/global-cloud-index-gci/white-paper-c11-738085.html}}
+}
+@inproceedings{Ghodsi:2011:DRF:1972457.1972490,
+ author = {Ghodsi, Ali and Zaharia, Matei and Hindman, Benjamin and Konwinski, Andy and Shenker, Scott and Stoica, Ion},
+ title = {Dominant Resource Fairness: Fair Allocation of Multiple Resource Types},
+ booktitle = {Proceedings of the 8th USENIX Conference on Networked Systems Design and Implementation},
+ series = {NSDI'11},
+ year = {2011},
+ location = {Boston, MA},
+ pages = {323--336},
+ numpages = {14},
+ url = {http://dl.acm.org/citation.cfm?id=1972457.1972490},
+ acmid = {1972490},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA, USA},
+} 
+
+@inproceedings{Sajjapongse:2013:PRE:2493123.2462911,
+ author = {Sajjapongse, Kittisak and Wang, Xiang and Becchi, Michela},
+ title = {A Preemption-based Runtime to Efficiently Schedule Multi-process Applications on Heterogeneous Clusters with GPUs},
+ booktitle = {Proceedings of the 22Nd International Symposium on High-performance Parallel and Distributed Computing},
+ series = {HPDC '13},
+ year = {2013},
+ isbn = {978-1-4503-1910-2},
+ location = {New York, New York, USA},
+ pages = {179--190},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2462902.2462911},
+ doi = {10.1145/2462902.2462911},
+ acmid = {2462911},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {CUDA, GPU, distributed computing, message passing interface, runtime systems, virtualization},
+} 
+
+@inproceedings{Tanasic:2014:EPM:2665671.2665702,
+ author = {Tanasic, Ivan and Gelado, Isaac and Cabezas, Javier and Ramirez, Alex and Navarro, Nacho and Valero, Mateo},
+ title = {Enabling Preemptive Multiprogramming on GPUs},
+ booktitle = {Proceeding of the 41st Annual International Symposium on Computer Architecuture},
+ series = {ISCA '14},
+ year = {2014},
+ isbn = {978-1-4799-4394-4},
+ location = {Minneapolis, Minnesota, USA},
+ pages = {193--204},
+ numpages = {12},
+ url = {http://dl.acm.org/citation.cfm?id=2665671.2665702},
+ acmid = {2665702},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+} 
+@inproceedings{Tang:2013:RRS:2451116.2451126,
+ author = {Tang, Lingjia and Mars, Jason and Wang, Wei and Dey, Tanima and Soffa, Mary Lou},
+ title = {ReQoS: Reactive Static/Dynamic Compilation for QoS in Warehouse Scale Computers},
+ booktitle = {Proceedings of the Eighteenth International Conference on Architectural Support for Programming Languages and Operating Systems},
+ series = {ASPLOS '13},
+ year = {2013},
+ isbn = {978-1-4503-1870-9},
+ location = {Houston, Texas, USA},
+ pages = {89--100},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2451116.2451126},
+ doi = {10.1145/2451116.2451126},
+ acmid = {2451126},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {compiler, contention, cross-core interference, datacenter, dynamic techniques, multicore, online adaptation, quality of service, runtime systems, warehouse scale computers},
+} 
+
+
+@inproceedings{Phull:2012:IRM:2287076.2287091,
+ author = {Phull, Rajat and Li, Cheng-Hong and Rao, Kunal and Cadambi, Hari and Chakradhar, Srimat},
+ title = {Interference-driven Resource Management for GPU-based Heterogeneous Clusters},
+ booktitle = {Proceedings of the 21st International Symposium on High-Performance Parallel and Distributed Computing},
+ series = {HPDC '12},
+ year = {2012},
+ isbn = {978-1-4503-0805-2},
+ location = {Delft, The Netherlands},
+ pages = {109--120},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2287076.2287091},
+ doi = {10.1145/2287076.2287091},
+ acmid = {2287091},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {cluster, co-processor, gpu, interference, iterative applications, scheduling},
+} 
+
+@INPROCEEDINGS{6742976, 
+author={P. Aguilera and K. Morrow and N. S. Kim}, 
+booktitle={2014 19th Asia and South Pacific Design Automation Conference (ASP-DAC)}, 
+title={QoS-aware dynamic resource allocation for spatial-multitasking GPUs}, 
+year={2014}, 
+volume={}, 
+number={}, 
+pages={726-731}, 
+keywords={graphics processing units;quality of service;resource allocation;GPGPU computing;QoS-aware dynamic resource allocation;dynamically partition resources;general-purpose computing;power 7 W;quality-of-service requirements;runtime technique;simultaneously-running applications;spatial-multitasking GPU;Dynamic scheduling;Graphics processing units;Heuristic algorithms;Multitasking;Power demand;Quality of service;Resource management}, 
+doi={10.1109/ASPDAC.2014.6742976}, 
+ISSN={2153-6961}, 
+month={Jan},}
+
+@inproceedings{Park:2015:CCP:2694344.2694346,
+ author = {Park, Jason Jong Kyu and Park, Yongjun and Mahlke, Scott},
+ title = {Chimera: Collaborative Preemption for Multitasking on a Shared GPU},
+ booktitle = {Proceedings of the Twentieth International Conference on Architectural Support for Programming Languages and Operating Systems},
+ series = {ASPLOS '15},
+ year = {2015},
+ isbn = {978-1-4503-2835-7},
+ location = {Istanbul, Turkey},
+ pages = {593--606},
+ numpages = {14},
+ url = {http://doi.acm.org/10.1145/2694344.2694346},
+ doi = {10.1145/2694344.2694346},
+ acmid = {2694346},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {context switch, graphics processing unit, idempotence, preemptive multitasking},
+} 
+
+@inproceedings{Yang:bubbleflux,
+ author = {Yang, Hailong and Breslow, Alex and Mars, Jason and Tang, Lingjia},
+ title = {Bubble-flux: Precise Online QoS Management for Increased Utilization in Warehouse Scale Computers},
+ booktitle = {Proceedings of the 40th Annual International Symposium on Computer Architecture},
+ series = {ISCA '13},
+ year = {2013},
+ isbn = {978-1-4503-2079-5},
+ location = {Tel-Aviv, Israel},
+ pages = {607--618},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2485922.2485974},
+ doi = {10.1145/2485922.2485974},
+ acmid = {2485974},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@inproceedings{Marsbubbleup,
+ author = {Mars, Jason and Tang, Lingjia and Hundt, Robert and Skadron, Kevin and Soffa, Mary Lou},
+ title = {Bubble-Up: Increasing Utilization in Modern Warehouse Scale Computers via Sensible Co-locations},
+ booktitle = {Proceedings of the 44th Annual IEEE/ACM International Symposium on Microarchitecture},
+ series = {MICRO-44},
+ year = {2011},
+ isbn = {978-1-4503-1053-6},
+ location = {Porto Alegre, Brazil},
+ pages = {248--259},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2155620.2155650},
+ doi = {10.1145/2155620.2155650},
+ acmid = {2155650},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@misc{siri,title={{Apple Siri.} description},howpublished={\url{https://www.apple.com/ios/siri/.}}
+}
+@misc{alexa,title={{Amazon Alexa.} description},howpublished={\url{https://www.alexa.com/.}}
+}
+
+@misc{mesosp,
+  title = {{Mesosphere} description},
+  howpublished = {\url{https://mesosphere.com/738085.html}}
+}
+
+@misc{swarm,
+  title = {{Docker Swarm description}},
+  howpublished = {\url{https://docs.docker.com/engine/swarm/swarm-tutorial/}}
+}
+
+@misc{baba,
+  title = {{Alibaba Cluster Trace Data description}},
+  howpublished = {\url{https://github.com/alibaba/clusterdata}}
+}
+
+@misc{k8s,
+  title = {{Nvidia k8s-device-plugin}},
+  howpublished = {\url{https://github.com/NVIDIA/k8s-device-plugin}}
+}
+
+
+@misc{volta,
+  title = {{Nvidia Volta V100 datasheet}},
+  howpublished = {\url{https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf}}
+}
+
+@misc{kube,
+  title = {{Kubernetes Scheduler GPU support description}},
+  howpublished = {\url{https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/}}
+}
+
+@article{kubernetes,
+ author = {Burns, Brendan and Grant, Brian and Oppenheimer, David and Brewer, Eric and Wilkes, John},
+ title = {Borg, Omega, and Kubernetes},
+ journal = {Commun. ACM},
+ issue_date = {May 2016},
+ volume = {59},
+ number = {5},
+ month = apr,
+ year = {2016},
+ issn = {0001-0782},
+ pages = {50--57},
+ numpages = {8},
+ url = {http://doi.acm.org/10.1145/2890784},
+ doi = {10.1145/2890784},
+ acmid = {2890784},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@inproceedings{che2009rodinia,
+  title={Rodinia: A benchmark suite for heterogeneous computing},
+  author={Che, Shuai and Boyer, Michael and Meng, Jiayuan and Tarjan, David and Sheaffer, Jeremy W and Lee, Sang-Ha and Skadron, Kevin},
+  booktitle={Workload Characterization, 2009. IISWC 2009. IEEE International Symposium on},
+  pages={44--54},
+  year={2009},
+  organization={Ieee}
+}
+
+@inproceedings{Hauswald:2015:SOE:2694344.2694347,
+ author = {Hauswald, Johann and Laurenzano, Michael A. and Zhang, Yunqi and Li, Cheng and Rovinski, Austin and Khurana, Arjun and Dreslinski, Ronald G. and Mudge, Trevor and Petrucci, Vinicius and Tang, Lingjia and Mars, Jason},
+ title = {Sirius: An Open End-to-End Voice and Vision Personal Assistant and Its Implications for Future Warehouse Scale Computers},
+ booktitle = {Proceedings of the Twentieth International Conference on Architectural Support for Programming Languages and Operating Systems},
+ series = {ASPLOS '15},
+ year = {2015},
+ isbn = {978-1-4503-2835-7},
+ location = {Istanbul, Turkey},
+ pages = {223--238},
+ numpages = {16},
+ url = {http://doi.acm.org/10.1145/2694344.2694347},
+ doi = {10.1145/2694344.2694347},
+ acmid = {2694347},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {datacenters, emerging workloads, intelligent personal assistants, warehouse scale computers},
+} 
+@article{Dean,
+ author = {Dean, Jeffrey and Barroso, Luiz Andr{\'e}},
+ title = {The Tail at Scale},
+ journal = {Commun. ACM},
+ issue_date = {February 2013},
+ volume = {56},
+ number = {2},
+ month = feb,
+ year = {2013},
+ issn = {0001-0782},
+ pages = {74--80},
+ numpages = {7},
+ url = {http://doi.acm.org/10.1145/2408776.2408794},
+ doi = {10.1145/2408776.2408794},
+ acmid = {2408794},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@book{Barroso:2009:DCI:1643608,
+ author = {Barroso, Luiz Andre and Hoelzle, Urs},
+ title = {The Datacenter As a Computer: An Introduction to the Design of Warehouse-Scale Machines},
+ year = {2009},
+ isbn = {159829556X, 9781598295566},
+ edition = {1st},
+ publisher = {Morgan and Claypool Publishers},
+} 
+
+
+@inproceedings{jouppi2017datacenter,
+  title={In-datacenter performance analysis of a tensor processing unit},
+  author={Jouppi, Norman P and Young, Cliff and Patil, Nishant and Patterson, David and Agrawal, Gaurav and Bajwa, Raminder and Bates, Sarah and Bhatia, Suresh and Boden, Nan and Borchers, Al and others},
+  booktitle={Proceedings of the 44th Annual International Symposium on Computer Architecture},
+  pages={1--12},
+  year={2017},
+  organization={ACM}
+}
+@inproceedings{amert2017gpu,
+  title={GPU scheduling on the NVIDIA TX2: Hidden details revealed},
+  author={Amert, Tanya and Otterness, Nathan and Yang, Ming and Anderson, James H and Smith, F Donelson},
+  booktitle={IEEE Real-Time Systems Symposium (RTSS)},
+  year={2017}
+}
+@misc{spark,
+  title = {{Spark Resource Manager} },
+  howpublished = {\url{https://blog.cloudera.com/blog/2014/05/apache-spark-resource-management-and-yarn-app-models/
+}}
+}
+@misc{grid,
+  title = {{NVIDIA GRID} },
+  howpublished = {\url{https://www.nvidia.com/en-us/design-visualization/solutions/virtualization/
+}}
+}
+@misc{mesos,
+  title = {{Mesos Scheduler GPU support} },
+  howpublished = {\url{http://mesos.apache.org/documentation/latest/gpu-support/}}
+}
+@misc{nvidia-dnn,
+  title = {{GPU-Based Deep Learning Inference} },
+  howpublished = {\url{https://www.nvidia.com/content/tegra/embedded-systems/pdf/jetson_tx1_whitepaper.pdf
+}}
+}
+
+@misc{netflix,
+  title = {{Netflix micro-services graph}},
+  howpublished = {\url{http://simianviz.surge.sh/netflix}}
+}
+
+@misc{arima,
+  title = {{ Auto-Regressive Integrated Moving Average}},
+  howpublished = {\url{http://people.duke.edu/~rnau/411arim.htm#arima010}}
+}
+
+
+
+@misc{tensorflowgpu,
+  title = {{Tensorflow Using GPUs}},
+  howpublished = {\url{https://www.tensorflow.org/programmers_guide/using_gpu#allowing_gpu_memory_growth}
+}}
+
+
+@misc{qualcomm,
+  title = {{ Qualcomm Acquires Kooaba Recognition Company for that integrate state-of-the-art visual recognition in applications}},
+  howpublished = {\url{https://developer.vuforia.com/}
+}}
+
+@inproceedings{TjongKimSang:2000:ICS:1117601.1117631,
+ author = {Tjong Kim Sang, Erik F. and Buchholz, Sabine},
+ title = {Introduction to the CoNLL-2000 Shared Task: Chunking},
+ booktitle = {Proceedings of the 2Nd Workshop on Learning Language in Logic and the 4th Conference on Computational Natural Language Learning - Volume 7},
+ series = {ConLL '00},
+ year = {2000},
+ location = {Lisbon, Portugal},
+ pages = {127--132},
+ numpages = {6},
+ url = {https://doi.org/10.3115/1117601.1117631},
+ doi = {10.3115/1117601.1117631},
+ acmid = {1117631},
+ publisher = {Association for Computational Linguistics},
+ address = {Stroudsburg, PA, USA},
+} 
+
+@article{Hearst:2011:NSU:2018396.2018414,
+ author = {Hearst, Marti A.},
+ title = {'Natural' Search User Interfaces},
+ journal = {Commun. ACM},
+ issue_date = {November 2011},
+ volume = {54},
+ number = {11},
+ month = nov,
+ year = {2011},
+ issn = {0001-0782},
+ pages = {60--67},
+ numpages = {8},
+ url = {http://doi.acm.org/10.1145/2018396.2018414},
+ doi = {10.1145/2018396.2018414},
+ acmid = {2018414},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+
+@misc{pynvml,
+  title = {{Python Bindings for the NVIDIA Management Library}},
+  howpublished = {\url{https://pypi.python.org/pypi/nvidia-ml-py/4.304.04}}
+}
+
+@article{ChetlurWVCTCS14,
+  added-at = {2014-11-02T00:00:00.000+0100},
+  author = {Chetlur, Sharan and Woolley, Cliff and Vandermersch, Philippe and Cohen, Jonathan and Tran, John and Catanzaro, Bryan and Shelhamer, Evan},
+  biburl = {https://www.bibsonomy.org/bibtex/2f181484d2a534badb1a26421940ed18b/dblp},
+  ee = {http://arxiv.org/abs/1410.0759},
+  interhash = {f51a9d16d8d415650cdf90e19d3e79de},
+  intrahash = {f181484d2a534badb1a26421940ed18b},
+  journal = {CoRR},
+  keywords = {dblp},
+  timestamp = {2015-06-18T04:14:21.000+0200},
+  title = {cuDNN: Efficient Primitives for Deep Learning.},
+  url = {http://dblp.uni-trier.de/db/journals/corr/corr1410.html#ChetlurWVCTCS14},
+  volume = {abs/1410.0759},
+  year = 2014
+}
+
+@misc{brain,
+  title = {{Google Brain Project} description},
+  howpublished ={\url{https://research.google.com/teams/brain/}}
+}
+
+@inproceedings{Theano,
+     author = {Bergstra, James and Breuleux, Olivier and Bastien, Fr{\'{e}}d{\'{e}}ric and Lamblin, Pascal and Pascanu, Razvan and Desjardins, Guillaume and Turian, Joseph and Warde-Farley, David and Bengio, Yoshua},
+      month = jun,
+      title = {Theano: a {CPU} and {GPU} Math Expression Compiler},
+  booktitle = {Proceedings of the Python for Scientific Computing Conference ({SciPy})},
+       year = {2010},
+   location = {Austin, TX}
+}
+
+@article{jia2014caffe,
+  Author = {Jia, Yangqing and Shelhamer, Evan and Donahue, Jeff and Karayev, Sergey and Long, Jonathan and Girshick, Ross and Guadarrama, Sergio and Darrell, Trevor},
+  Journal = {arXiv preprint arXiv:1408.5093},
+  Title = {Caffe: Convolutional Architecture for Fast Feature Embedding},
+  Year = {2014}
+}
+
+@inproceedings{tensor,
+title={TensorFlow: A System for Large-Scale Machine Learning.},
+  author={Abadi, Mart{\'\i}n and Barham, Paul and Chen, Jianmin and Chen, Zhifeng and Davis, Andy and Dean, Jeffrey and Devin, Matthieu and Ghemawat, Sanjay and Irving, Geoffrey and Isard, Michael and others},
+  booktitle={OSDI},
+  volume={16},
+  pages={265--283},
+  year={2016}
+}
+
+
+@article{chen2016baymax,
+  title={Baymax: Qos awareness and increased utilization for non-preemptive accelerators in warehouse scale computers},
+  author={Chen, Quan and Yang, Hailong and Mars, Jason and Tang, Lingjia},
+  journal={ACM SIGARCH Computer Architecture News},
+  volume={44},
+  number={2},
+  pages={681--696},
+  year={2016},
+  publisher={ACM}
+}
+
+@inproceedings{chen2017prophet,
+  title={Prophet: Precise QoS Prediction on Non-Preemptive Accelerators to Improve Utilization in Warehouse-Scale Computers},
+  author={Chen, Quan and Yang, Hailong and Guo, Minyi and Kannan, Ram Srivatsa and Mars, Jason and Tang, Lingjia},
+  booktitle={Proceedings of the Twenty-Second International Conference on Architectural Support for Programming Languages and Operating Systems},
+  pages={17--32},
+  year={2017},
+  organization={ACM}
+}
+
+@inproceedings{ukidave2016mystic,
+  title={Mystic: Predictive scheduling for gpu based cloud servers using machine learning},
+  author={Ukidave, Yash and Li, Xiangyu and Kaeli, David},
+  booktitle={Parallel and Distributed Processing Symposium, 2016 IEEE International},
+  pages={353--362},
+  year={2016},
+  organization={IEEE}
+}
+
+@inproceedings{wu2015gpgpu,
+  title={GPGPU performance and power estimation using machine learning},
+  author={Wu, Gene and Greathouse, Joseph L and Lyashevsky, Alexander and Jayasena, Nuwan and Chiou, Derek},
+  booktitle={High Performance Computer Architecture (HPCA), 2015 IEEE 21st International Symposium on},
+  pages={564--576},
+  year={2015},
+  organization={IEEE}
+}
+
+
+@article{hassandon,
+  title={Don’t cry over spilled records: Memory elasticity of data-parallel applications and its application to cluster scheduling},
+  author={Hassan, Wajih Ul and Zwaenepoel, Willy}
+}
+
+@article{hazelwoodapplied,
+  title={Applied Machine Learning at Facebook: A Datacenter Infrastructure Perspective},
+  author={Hazelwood, Kim and Bird, Sarah and Brooks, David and Chintala, Soumith and Diril, Utku and Dzhulgakov, Dmytro and Fawzy, Mohamed and Jia, Bill and Jia, Yangqing and Kalro, Aditya and others}
+}
+@InProceedings{10.1007/11744023_32,
+author="Bay, Herbert
+and Tuytelaars, Tinne
+and Van Gool, Luc",
+editor="Leonardis, Ale{\v{s}}
+and Bischof, Horst
+and Pinz, Axel",
+title="SURF: Speeded Up Robust Features",
+booktitle="Computer Vision -- ECCV 2006",
+year="2006",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="404--417",
+abstract="In this paper, we present a novel scale- and rotation-invariant interest point detector and descriptor, coined SURF (Speeded Up Robust Features). It approximates or even outperforms previously proposed schemes with respect to repeatability, distinctiveness, and robustness, yet can be computed and compared much faster.",
+isbn="978-3-540-33833-8"
+}
+
+@INPROCEEDINGS{Povey11thekaldi,
+    author = {Daniel Povey and Arnab Ghoshal and Gilles Boulianne and Nagendra Goel and Mirko Hannemann and Yanmin Qian and Petr Schwarz and Georg Stemmer},
+    title = {The kaldi speech recognition toolkit},
+    booktitle = {In IEEE 2011 workshop},
+    year = {2011}
+}
+
+@inproceedings{Gupta:2011:PCS:2002181.2002184,
+ author = {Gupta, Vishakha and Schwan, Karsten and Tolia, Niraj and Talwar, Vanish and Ranganathan, Parthasarathy},
+ title = {Pegasus: Coordinated Scheduling for Virtualized Accelerator-based Systems},
+ booktitle = {Proceedings of the 2011 USENIX Conference on USENIX Annual Technical Conference},
+ series = {USENIXATC'11},
+ year = {2011},
+ location = {Portland, OR},
+ pages = {3--3},
+ numpages = {1},
+ url = {http://dl.acm.org/citation.cfm?id=2002181.2002184},
+ acmid = {2002184},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA, USA},
+} 
+
+@INPROCEEDINGS{1659988, 
+author={D. Huggins-Daines and M. Kumar and A. Chan and A. W. Black and M. Ravishankar and A. I. Rudnicky}, 
+booktitle={2006 IEEE International Conference on Acoustics Speech and Signal Processing Proceedings}, 
+title={Pocketsphinx: A Free, Real-Time Continuous Speech Recognition System for Hand-Held Devices}, 
+year={2006}, 
+volume={1}, 
+number={}, 
+pages={I-I}, 
+keywords={human computer interaction;mobile handsets;speech recognition;206 MHz;PocketSphinx;embedded devices;hand-held devices;human-computer interactive applications;large vocabulary continuous speech recognition;mobile devices;real-time continuous speech recognition system;Application software;Graphical user interfaces;Hardware;Licenses;Natural languages;Open source software;Operating systems;Real time systems;Speech recognition;Vocabulary}, 
+doi={10.1109/ICASSP.2006.1659988}, 
+ISSN={1520-6149}, 
+month={May},}
+
+@inproceedings{hauswald2015djinn,
+  title={DjiNN and Tonic: DNN as a service and its implications for future warehouse scale computers},
+  author={Hauswald, Johann and Kang, Yiping and Laurenzano, Michael A and Chen, Quan and Li, Cheng and Mudge, Trevor and Dreslinski, Ronald G and Mars, Jason and Tang, Lingjia},
+  booktitle={ACM SIGARCH Computer Architecture News},
+  volume={43},
+  number={3},
+  pages={27--40},
+  year={2015},
+  organization={ACM}
+}
+
+@inproceedings{cortez2017resource,
+  title={Resource Central: Understanding and Predicting Workloads for Improved Resource Management in Large Cloud Platforms},
+  author={Cortez, Eli and Bonde, Anand and Muzio, Alexandre and Russinovich, Mark and Fontoura, Marcus and Bianchini, Ricardo},
+  booktitle={Proceedings of the 26th Symposium on Operating Systems Principles},
+  pages={153--167},
+  year={2017},
+  organization={ACM}
+}
+
+@inproceedings{huang2016programming,
+  title={Programming and runtime support to blaze FPGA accelerator deployment at datacenter scale},
+  author={Huang, Muhuan and Wu, Di and Yu, Cody Hao and Fang, Zhenman and Interlandi, Matteo and Condie, Tyson and Cong, Jason},
+  booktitle={Proceedings of the Seventh ACM Symposium on Cloud Computing},
+  pages={456--469},
+  year={2016},
+  organization={ACM}
+}
+
+@inproceedings{caulfield2016cloud,
+  title={A cloud-scale acceleration architecture},
+  author={Caulfield, Adrian M and Chung, Eric S and Putnam, Andrew and Angepat, Hari and Fowers, Jeremy and Haselman, Michael and Heil, Stephen and Humphrey, Matt and Kaur, Puneet and Kim, Joo-Young and others},
+  booktitle={Microarchitecture (MICRO), 2016 49th Annual IEEE/ACM International Symposium on},
+  pages={1--13},
+  year={2016},
+  organization={IEEE}
+}
+
+@inproceedings{wong2016peak,
+  title={Peak efficiency aware scheduling for highly energy proportional servers},
+  author={Wong, Daniel},
+  booktitle={Computer Architecture (ISCA), 2016 ACM/IEEE 43rd Annual International Symposium on},
+  pages={481--492},
+  year={2016},
+  organization={IEEE}
+}
+
+@inproceedings{lo2015heracles,
+  title={Heracles: improving resource efficiency at scale},
+  author={Lo, David and Cheng, Liqun and Govindaraju, Rama and Ranganathan, Parthasarathy and Kozyrakis, Christos},
+  booktitle={ACM SIGARCH Computer Architecture News},
+  volume={43},
+  number={3},
+  pages={450--462},
+  year={2015},
+  organization={ACM}
+}
+
+@inproceedings{gujarati2017swayam,
+  title={Swayam: distributed autoscaling to meet SLAs of machine learning inference services with resource efficiency},
+  booktitle={Proceedings of the 18th ACM/IFIP/USENIX Middleware Conference},
+  pages={109--120},
+  year={2017},
+  organization={ACM}
+}
+
+@inproceedings{sharma2012mrorchestrator,
+  title={Mrorchestrator: A fine-grained resource orchestration framework for mapreduce clusters},
+  author={Sharma, Bikash and Prabhakar, Ramya and Lim, Seung-Hwan and Kandemir, Mahmut T and Das, Chita R},
+  booktitle={Cloud Computing (CLOUD), 2012 IEEE 5th International Conference on},
+  pages={1--8},
+  year={2012},
+  organization={IEEE}
+}
+
+@article{delimitrou2014quasar,
+  title={Quasar: resource-efficient and QoS-aware cluster management},
+  author={Delimitrou, Christina and Kozyrakis, Christos},
+  journal={ACM SIGPLAN Notices},
+  volume={49},
+  number={4},
+  pages={127--144},
+  year={2014},
+  publisher={ACM}
+}
+
+@inproceedings{fang2015interruptible,
+  title={Interruptible tasks: Treating memory pressure as interrupts for highly scalable data-parallel programs},
+  author={Fang, Lu and Nguyen, Khanh and Xu, Guoqing and Demsky, Brian and Lu, Shan},
+  booktitle={Proceedings of the 25th Symposium on Operating Systems Principles},
+  pages={394--409},
+  year={2015},
+  organization={ACM}
+}
+
+@inproceedings{gleeson2017heterogeneous,
+  title={Heterogeneous GPU reallocation},
+  author={Gleeson, James and De Lara, Eyal},
+  booktitle={9th USENIX Workshop on Hot Topics in Cloud Computing (HotCloud 17)},
+  year={2017}
+}
+
+@inproceedings{memcachedgpu,
+ author = {Hetherington, Tayler H. and O'Connor, Mike and Aamodt, Tor M.},
+ title = {MemcachedGPU: Scaling-up Scale-out Key-value Stores},
+ booktitle = {Proceedings of the Sixth ACM Symposium on Cloud Computing},
+ series = {SoCC '15},
+ year = {2015},
+ isbn = {978-1-4503-3651-2},
+ location = {Kohala Coast, Hawaii},
+ pages = {43--57},
+ numpages = {15},
+ url = {http://doi.acm.org/10.1145/2806777.2806836},
+ doi = {10.1145/2806777.2806836},
+ acmid = {2806836},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {GPU, data center, key-value store},
+} 
+
+@Article{Abril07,
+  author        = "Patricia S. Abril and Robert Plant",
+  title         = "The patent holder's dilemma: Buy, sell, or troll?",
+  journal       = "Communications of the ACM",
+  volume        = "50",
+  number        = "1",
+  month         = jan,
+  year          = "2007",
+  pages         = "36--44",
+  doi           = "10.1145/1188913.1188915",
+  url           = "http://doi.acm.org/10.1145/1219092.1219093",
+  note          = "",
+}
+
+@Article{Cohen07,
+  author        = "Sarah Cohen and Werner Nutt and Yehoshua Sagic",
+  title         = "Deciding equivalances among conjunctive aggregate queries",
+  journal       = JACM,
+  articleno     = "5",
+  numpages      = "50",
+  volume        = "54",
+  number        = "2",
+  month         = apr,
+  year          = "2007",
+  doi           = "10.1145/1219092.1219093",
+  url           = "http://doi.acm.org/10.1145/1219092.1219093",
+  acmid         = "1219093",
+  note          = "",
+}
+
+
+@periodical{JCohen96,
+  key =          "Cohen",
+  editor =       "Jacques Cohen",
+  title =        "Special issue: Digital Libraries",
+  journal =      CACM,
+  volume =       "39",
+  number =       "11",
+  month =        nov,
+  year =         "1996",
+}
+
+
+@Book{Kosiur01,
+  author =       "David Kosiur",
+  title =        "Understanding Policy-Based Networking",
+  publisher =    "Wiley",
+  year =         "2001",
+  address =      "New York, NY",
+  edition =      "2nd.",
+  editor =       "",
+  volume =       "",
+  number =       "",
+  series =       "",
+  month =        "",
+  note =         "",
+}
+
+
+@Book{Harel79,
+  author =       "David Harel",
+  year =         "1979",
+  title =        "First-Order Dynamic Logic",
+  series =       "Lecture Notes in Computer Science",
+  volume =       "68",
+  address =      "New York, NY",
+  publisher =    "Springer-Verlag",
+  doi =          "10.1007/3-540-09237-4",
+  url =          "http://dx.doi.org/10.1007/3-540-09237-4",
+  editor =       "",
+  number =       "",
+  month =        "",
+  note =         "",
+}
+
+
+@Inbook{Editor00,
+  author =       "",
+  editor =       "Ian Editor",
+  title =        "The title of book one",
+  subtitle =     "The book subtitle",
+  series =       "The name of the series one",
+  year =         "2007",
+  volume =       "9",
+  address =      "Chicago",
+  edition =      "1st.",
+  publisher =    "University of Chicago Press",
+  doi =          "10.1007/3-540-09237-4",
+  url =          "http://dx.doi.org/10.1007/3-540-09456-9",
+  chapter =      "",
+  pages =        "",
+  number =       "",
+  type =         "",
+  month =        "",
+  note =         "",
+}
+
+%
+@InBook{Editor00a,
+  author =       "",
+  editor =       "Ian Editor",
+  title =        "The title of book two",
+  subtitle =     "The book subtitle",
+  series =       "The name of the series two",
+  year =         "2008",
+  address =      "Chicago",
+  edition =      "2nd.",
+  publisher =    "University of Chicago Press",
+  doi =          "10.1007/3-540-09237-4",
+  url =          "http://dx.doi.org/10.1007/3-540-09456-9",
+  volume =       "",
+  chapter =      "100",
+  pages =        "",
+  number =       "",
+  type =         "",
+  month =        "",
+  note =         "",
+}
+
+
+% incollection (has an editor, title, and possibly a booktitle)
+@Incollection{Spector90,
+  author =       "Asad Z. Spector",
+  title =        "Achieving application requirements",
+  booktitle =    "Distributed Systems",
+  publisher =    "ACM Press",
+  address =      "New York, NY",
+  year =         "1990",
+  edition =      "2nd.",
+  chapter =      "",
+  editor =       "Sape Mullender",
+  pages =        "19--33",
+  doi =          "10.1145/90417.90738",
+  url =          "http://doi.acm.org/10.1145/90417.90738",
+  volume =       "",
+  number =       "",
+  series =       "",
+  type =         "",
+  month =        "",
+  note =         "",
+}
+
+
+% incollection (has an editor, title, and possibly a booktitle)
+@Incollection{Douglass98,
+  author =       "Bruce P. Douglass and David Harel and Mark B. Trakhtenbrot",
+  title =        "Statecarts in use: structured analysis and object-orientation",
+  series =       "Lecture Notes in Computer Science",
+  booktitle =    "Lectures on Embedded Systems",
+  publisher =    "Springer-Verlag",
+  address =      "London",
+  volume =       "1494",
+  year =         "1998",
+  chapter =      "",
+  editor =       "Grzegorz Rozenberg and Frits W. Vaandrager",
+  pages =        "368--394",
+  doi =          "10.1007/3-540-65193-4_29",
+  url =          "http://dx.doi.org/10.1007/3-540-65193-4_29",
+  edition =      "",
+  number =       "",
+  type =         "",
+  month =        "",
+  note =         "",
+}
+
+
+@Book{Knuth97,
+  author =       "Donald E. Knuth",
+  title =        "The Art of Computer Programming, Vol. 1: Fundamental Algorithms (3rd. ed.)",
+  publisher =    "Addison Wesley Longman Publishing Co., Inc.",
+  year =         "1997",
+  address =      "",
+  edition =      "",
+  editor =       "",
+  volume =       "",
+  number =       "",
+  series =       "",
+  month =        "",
+  note =         "",
+}
+
+
+@Book{Knuth98,
+  author =       "Donald E. Knuth",
+  year =         "1998",
+  title =        "The Art of Computer Programming",
+  series =       "Fundamental Algorithms",
+  volume =       "1",
+  edition =      "3rd",
+  address =      "",
+  publisher =    "Addison Wesley Longman Publishing Co., Inc.",
+  doi =          "",
+  url =          "",
+  editor =       "",
+  number =       "",
+  month =        "",
+  note =         "(book)",
+}
+
+%Inbook{Knuth97,
+%  author =       "Donald E. Knuth",
+%  title =        "The Art of Computer Programming",
+%  booktitle =    "the booktitle",
+%  edition =      "3",
+%  volume =       "1",
+%  year =         "1997",
+%  publisher =    "Addison Wesley Longman Publishing Co., Inc.",
+%  editor =       "",
+%  number =       "",
+%  series =       "Fundamental Algorithms",
+%  type =         "",
+%  chapter =      "",
+%  pages =        "",
+%  address =      "",
+%  month =        "",
+%  note =         "(inbook)",
+%}
+
+%INBOOK{DK:73-inbook-full,
+%   author = "Donald E. Knuth",
+%   title = "Fundamental Algorithms (inbook w series)",
+%   volume = 1,
+%   series = "The Art of Computer Programming",
+%   publisher = "Addison-Wesley",
+%   address = "Reading, Massachusetts",
+%   edition = "Second",
+%   month = "10~" # jan,
+%   year = "1973",
+%   type = "Section",
+%   chapter = "1.2",
+%   pages = "10--119",
+%   note = "Full INBOOK entry (w series)",
+%}
+
+%INcollection{DK:74-incoll,
+%   author = "Donald E. Knuth",
+%   title = "Fundamental Algorithms (incoll)",
+%   volume = 1,
+%   booktitle = "The Art of Computer Programming",
+%   publisher = "Addison-Wesley",
+%   address = "Reading, Massachusetts",
+%   month = "10~" # jan,
+%   year = "1974",
+%   pages = "10--119",
+%   editor = "Bernard Rous",
+%   note = "This is a full incoll entry with an editor",
+%}
+
+%INcollection{DK:75-incollws,
+%   author = "Donald E. Knuth",
+%   title = "Fundamental Algorithms (incoll w series)",
+%   volume = 1,
+%   booktitle = "The Art of Computer Programming",
+%   series = "The Art of Computer Programming",
+%   publisher = "Addison-Wesley",
+%   address = "Reading, Massachusetts",
+%   month = "10~" # jan,
+%   year = "1975",
+%   pages = "10--119",
+%   editor = "Bernard Rous",
+%   note = "This is a full incoll entry with an editor and series",
+%}
+
+
+@incollection{GM05,
+Author= "Dan Geiger and Christopher Meek",
+Title= "Structured Variational Inference Procedures and their Realizations (as incol)",
+Year= 2005,
+Booktitle="Proceedings of Tenth International Workshop on Artificial Intelligence and Statistics, {\rm The Barbados}",
+Publisher="The Society for Artificial Intelligence and Statistics",
+Month= jan,
+Editors= "Z. Ghahramani and R. Cowell"
+}
+
+@Inproceedings{Smith10,
+  author =       "Stan W. Smith",
+  title =        "An experiment in bibliographic mark-up: Parsing metadata for XML export",
+  booktitle =    "Proceedings of the 3rd. annual workshop on Librarians and Computers",
+  series =       "LAC '10",
+  editor =       "Reginald N. Smythe and Alexander Noble",
+  volume =       "3",
+  year =         "2010",
+  publisher =    "Paparazzi Press",
+  address =      "Milan Italy",
+  pages =        "422--431",
+  doi =          "99.9999/woot07-S422",
+  url =          "http://dx.doi.org/99.0000/woot07-S422",
+  number =       "",
+  month =        "",
+  organization = "",
+  note =         "",
+}
+
+@Inproceedings{VanGundy07,
+  author =       "Matthew Van Gundy and Davide Balzarotti and Giovanni Vigna",
+  year =         "2007",
+  title =        "Catch me, if you can: Evading network signatures with web-based polymorphic worms",
+  booktitle =    "Proceedings of the first USENIX workshop on Offensive Technologies",
+  series =       "WOOT '07",
+  publisher =    "USENIX Association",
+  address =      "Berkley, CA",
+  articleno =    "7",
+  numpages =     "9",
+  editor =       "",
+  volume =       "",
+  number =       "",
+  pages =        "",
+  month =        "",
+  organization = "",
+  note =         "",
+}
+
+@Inproceedings{VanGundy08,
+  author =       "Matthew Van Gundy and Davide Balzarotti and Giovanni Vigna",
+  year =         "2008",
+  title =        "Catch me, if you can: Evading network signatures with web-based polymorphic worms",
+  booktitle =    "Proceedings of the first USENIX workshop on Offensive Technologies",
+  series =       "WOOT '08",
+  publisher =    "USENIX Association",
+  address =      "Berkley, CA",
+  articleno =    "7",
+  numpages =     "2",
+  editor =       "",
+  volume =       "",
+  number =       "",
+  pages =        "99-100",
+  month =        "",
+  organization = "",
+  note =         "",
+}
+
+@Inproceedings{VanGundy09,
+  author =       "Matthew Van Gundy and Davide Balzarotti and Giovanni Vigna",
+  year =         "2009",
+  title =        "Catch me, if you can: Evading network signatures with web-based polymorphic worms",
+  booktitle =    "Proceedings of the first USENIX workshop on Offensive Technologies",
+  series =       "WOOT '09",
+  publisher =    "USENIX Association",
+  address =      "Berkley, CA",
+  articleno =    "",
+  numpages =     "",
+  editor =       "",
+  volume =       "",
+  number =       "",
+  pages =        "90--100",
+  month =        "",
+  organization = "",
+  note =         "",
+}
+
+@Inproceedings{Andler79,
+  author =       "Sten Andler",
+  title =        "Predicate Path expressions",
+  booktitle =    "Proceedings of the 6th. ACM SIGACT-SIGPLAN symposium on Principles of Programming Languages",
+  series =       "POPL '79",
+  year =         "1979",
+  publisher =    "ACM Press",
+  address =      "New York, NY",
+  pages =        "226--236",
+  doi =          "10.1145/567752.567774",
+  url =          "http://doi.acm.org/10.1145/567752.567774",
+  editor =       "",
+  volume =       "",
+  number =       "",
+  month =        "",
+  organization = "",
+  note =         "",
+}
+
+@Techreport{Harel78,
+  author =       "David Harel",
+  year =         "1978",
+  title =        "LOGICS of Programs: AXIOMATICS and DESCRIPTIVE POWER",
+  institution =  "Massachusetts Institute of Technology",
+  type =         "MIT Research Lab Technical Report",
+  number =       "TR-200",
+  address =      "Cambridge, MA",
+  month =        "",
+  note =         "",
+}
+
+@MASTERSTHESIS{anisi03,
+author = {David A. Anisi},
+title = {Optimal Motion Control of a Ground Vehicle},
+school = {Royal Institute of Technology (KTH), Stockholm, Sweden},
+intitution = {FOI-R-0961-SE, Swedish Defence Research Agency (FOI)},
+year = {2003},
+}
+
+
+@Phdthesis{Clarkson85,
+  author =       "Kenneth L. Clarkson",
+  year =         "1985",
+  title =        "Algorithms for Closest-Point Problems (Computational Geometry)",
+  school =       "Stanford University",
+  address =      "Palo Alto, CA",
+  note =         "UMI Order Number: AAT 8506171",
+  type =         "",
+  month =        "",
+}
+
+
+@online{Thornburg01,
+  author =       "Harry Thornburg",
+  year =         "2001",
+  title =        "Introduction to Bayesian Statistics",
+  url =          "http://ccrma.stanford.edu/~jos/bayes/bayes.html",
+  month =        mar,
+  lastaccessed = "March 2, 2005",
+}
+
+
+@online{Ablamowicz07,
+  author =       "Rafal Ablamowicz and Bertfried Fauser",
+  year =         "2007",
+  title =        "CLIFFORD: a Maple 11 Package for Clifford Algebra Computations, version 11",
+  url =          "http://math.tntech.edu/rafal/cliff11/index.html",
+  lastaccessed = "February 28, 2008",
+}
+
+
+@misc{Poker06,
+  author =       "Poker-Edge.Com",
+  year =         "2006",
+  month =        mar,
+  title =        "Stats and Analysis",
+  lastaccessed = "June 7, 2006",
+  url =          "http://www.poker-edge.com/stats.php",
+}
+
+@misc{Obama08,
+  author        = "Barack Obama",
+  year          = "2008",
+  title         = "A more perfect union",
+  howpublished  = "Video",
+  day           = "5",
+  url           = "http://video.google.com/videoplay?docid=6528042696351994555",
+  month         = mar,
+  lastaccessed  = "March 21, 2008",
+  note          =  "",
+}
+
+@misc{JoeScientist001,
+  author =       "Joseph Scientist",
+  year =         "2009",
+  title =        "The fountain of youth",
+  note =         "Patent No. 12345, Filed July 1st., 2008, Issued Aug. 9th., 2009",
+  url =          "",
+  howpublished = "",
+  month =        aug,
+  lastaccessed = "",
+}
+
+
+@Inproceedings{Novak03,
+  author =       "Dave Novak",
+  title =        "Solder man",
+  booktitle =    "ACM SIGGRAPH 2003 Video Review on Animation theater Program: Part I - Vol. 145 (July 27--27, 2003)",
+  year =         "2003",
+  publisher =    "ACM Press",
+  address =      "New York, NY",
+  pages =        "4",
+  month =        "March 21, 2008",
+  doi =          "99.9999/woot07-S422",
+  url =          "http://video.google.com/videoplay?docid=6528042696351994555",
+  note =         "",
+  howpublished = "Video",
+  editor =       "",
+  volume =       "",
+  number =       "",
+  series =       "",
+  organization = "",
+}
+
+
+@article{Lee05,
+  author =       "Newton Lee",
+  year =         "2005",
+  title =        "Interview with Bill Kinder: January 13, 2005",
+  journal =      "Comput. Entertain.",
+  eid =          "4",
+  volume =       "3",
+  number =       "1",
+  month =        "Jan.-March",
+  doi =          "10.1145/1057270.1057278",
+  url =          "http://doi.acm.org/10.1145/1057270.1057278",
+  howpublished = "Video",
+  note =         "",
+}
+
+@article{Rous08,
+  author =       "Bernard Rous",
+  year =         "2008",
+  title =        "The Enabling of Digital Libraries",
+  journal =      "Digital Libraries",
+  volume =       "12",
+  number =       "3",
+  month =        jul,
+  articleno =    "5",
+  doi =          "",
+  url =          "",
+  howpublished = "",
+  note =         "To appear",
+}
+
+@article{384253,
+ author = {Werneck,, Renato and Setubal,, Jo\~{a}o and da Conceic\~{a}o,, Arlindo},
+ title = {(old) Finding minimum congestion spanning trees},
+ journal = {J. Exp. Algorithmics},
+ volume = {5},
+ year = {2000},
+ issn = {1084-6654},
+ pages = {11},
+ doi = {http://doi.acm.org/10.1145/351827.384253},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+
+@article{Werneck:2000:FMC:351827.384253,
+ author = {Werneck, Renato and Setubal, Jo\~{a}o and da Conceic\~{a}o, Arlindo},
+ title = {(new) Finding minimum congestion spanning trees},
+ journal = {J. Exp. Algorithmics},
+ volume = {5},
+ month = dec,
+ year = {2000},
+ issn = {1084-6654},
+ articleno = {11},
+ url = {http://portal.acm.org/citation.cfm?id=351827.384253},
+ doi = {10.1145/351827.384253},
+ acmid = {384253},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+@article{1555162,
+ author = {Conti, Mauro and Di Pietro, Roberto and Mancini, Luigi V. and Mei, Alessandro},
+ title = {(old) Distributed data source verification in wireless sensor networks},
+ journal = {Inf. Fusion},
+ volume = {10},
+ number = {4},
+ year = {2009},
+ issn = {1566-2535},
+ pages = {342--353},
+ doi = {http://dx.doi.org/10.1016/j.inffus.2009.01.002},
+ publisher = {Elsevier Science Publishers B. V.},
+ address = {Amsterdam, The Netherlands, The Netherlands},
+ }
+
+@article{Conti:2009:DDS:1555009.1555162,
+ author = {Conti, Mauro and Di Pietro, Roberto and Mancini, Luigi V. and Mei, Alessandro},
+ title = {(new) Distributed data source verification in wireless sensor networks},
+ journal = {Inf. Fusion},
+ volume = {10},
+ number = {4},
+ month = oct,
+ year = {2009},
+ issn = {1566-2535},
+ pages = {342--353},
+ numpages = {12},
+ url = {http://portal.acm.org/citation.cfm?id=1555009.1555162},
+ doi = {10.1016/j.inffus.2009.01.002},
+ acmid = {1555162},
+ publisher = {Elsevier Science Publishers B. V.},
+ address = {Amsterdam, The Netherlands, The Netherlands},
+ keywords = {Clone detection, Distributed protocol, Securing data fusion, Wireless sensor networks},
+}
+
+@inproceedings{Li:2008:PUC:1358628.1358946,
+ author = {Li, Cheng-Lun and Buyuktur, Ayse G. and Hutchful, David K. and Sant, Natasha B. and Nainwal, Satyendra K.},
+ title = {Portalis: using competitive online interactions to support aid initiatives for the homeless},
+ booktitle = {CHI '08 extended abstracts on Human factors in computing systems},
+ year = {2008},
+ isbn = {978-1-60558-012-X},
+ location = {Florence, Italy},
+ pages = {3873--3878},
+ numpages = {6},
+ url = {http://portal.acm.org/citation.cfm?id=1358628.1358946},
+ doi = {10.1145/1358628.1358946},
+ acmid = {1358946},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {cscw, distributed knowledge acquisition, incentive design, online games, recommender systems, reputation systems, user studies, virtual community},
+}
+
+@book{Hollis:1999:VBD:519964,
+ author = {Hollis, Billy S.},
+ title = {Visual Basic 6: Design, Specification, and Objects with Other},
+ year = {1999},
+ isbn = {0130850845},
+ edition = {1st},
+ publisher = {Prentice Hall PTR},
+ address = {Upper Saddle River, NJ, USA},
+ }
+
+
+@book{Goossens:1999:LWC:553897,
+ author = {Goossens, Michel and Rahtz, S. P. and Moore, Ross and Sutor, Robert S.},
+ title = {The  Latex Web Companion: Integrating TEX, HTML, and XML},
+ year = {1999},
+ isbn = {0201433117},
+ edition = {1st},
+ publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+ address = {Boston, MA, USA},
+ }
+
+% need to test genres for errant isbn output
+
+% techreport
+@techreport{897367,
+ author = {Buss, Jonathan F. and Rosenberg, Arnold L. and Knott, Judson D.},
+ title = {Vertex Types in Book-Embeddings},
+ year = {1987},
+ source = {http://www.ncstrl.org:8900/ncstrl/servlet/search?formname=detail\&id=oai%3Ancstrlh%3Aumass_cs%3Ancstrl.umassa_cs%2F%2FUM-CS-1987-018},
+ publisher = {University of Massachusetts},
+ address = {Amherst, MA, USA},
+ }
+
+@techreport{Buss:1987:VTB:897367,
+ author = {Buss, Jonathan F. and Rosenberg, Arnold L. and Knott, Judson D.},
+ title = {Vertex Types in Book-Embeddings},
+ year = {1987},
+ source = {http://www.ncstrl.org:8900/ncstrl/servlet/search?formname=detail\&id=oai%3Ancstrlh%3Aumass_cs%3Ancstrl.umassa_cs%2F%2FUM-CS-1987-018},
+ publisher = {University of Massachusetts},
+ address = {Amherst, MA, USA},
+ }
+
+% whole proceedings
+
+@proceedings{Czerwinski:2008:1358628,
+ author = {},
+ note = {General Chair-Czerwinski, Mary and General Chair-Lund, Arnie and Program Chair-Tan, Desney},
+ title = {CHI '08: CHI '08 extended abstracts on Human factors in computing systems},
+ year = {2008},
+ isbn = {978-1-60558-012-X},
+ location = {Florence, Italy},
+ order_no = {608085},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+% phdthesis
+
+@phdthesis{Clarkson:1985:ACP:911891,
+ author = {Clarkson, Kenneth Lee},
+ advisor = {Yao, Andrew C.},
+ title = {Algorithms for Closest-Point Problems (Computational Geometry)},
+ year = {1985},
+ note = {AAT 8506171},
+ school = {Stanford University},
+ address = {Stanford, CA, USA},
+ }
+% school is being picked up -- but not publisher (which is OK)
+% Also -- the title is NOT being output in italics !!! Arrrrgh! - I fixed it. :-)
+
+
+%%% compare with 'old'
+%%% atsign-Phdthesis{Clarkson85,
+%%%  author =       "Kenneth L. Clarkson",
+%%%  year =         "1985",
+%%%  title =        "Algorithms for Closest-Point Problems (Computational Geometry)",
+%%%  school =       "Stanford University",
+%%%  address =      "Palo Alto, CA",
+%%%  note =         "UMI Order Number: AAT 8506171",
+%%%  type =         "",
+%%%  month =        "",
+%%%}
+
+% A bibliography
+@Article{1984:1040142,
+ key = {{$\!\!$}},
+ journal = {SIGCOMM Comput. Commun. Rev.},
+ year = {1984},
+ issn = {0146-4833},
+ volume = {13-14},
+ number = {5-1},
+ issue_date = {January/April 1984},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ }
+
+
+% grinder
+@inproceedings{2004:ITE:1009386.1010128,
+ key = {IEEE},
+ title = {IEEE TCSC Executive Committee},
+ booktitle = {Proceedings of the IEEE International Conference on Web Services},
+ series = {ICWS '04},
+ year = {2004},
+ isbn = {0-7695-2167-3},
+ pages = {21--22},
+ url = {http://dx.doi.org/10.1109/ICWS.2004.64},
+ doi = {http://dx.doi.org/10.1109/ICWS.2004.64},
+ acmid = {1010128},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+}
+
+% div book
+@book{Mullender:1993:DS(:302430,
+ editor = {Mullender, Sape},
+ title = {Distributed systems (2nd Ed.)},
+ year = {1993},
+ isbn = {0-201-62427-3},
+ publisher = {ACM Press/Addison-Wesley Publishing Co.},
+ address = {New York, NY, USA},
+ }
+
+% master thesis (as techreport and thesis)
+
+@techreport{Petrie:1986:NAD:899644,
+ author = {Petrie, Charles J.},
+ title = {New Algorithms for Dependency-Directed Backtracking (Master's thesis)},
+ year = {1986},
+ source = {http://www.ncstrl.org:8900/ncstrl/servlet/search?formname=detail\&id=oai%3Ancstrlh%3Autexas_cs%3AUTEXAS_CS%2F%2FAI86-33},
+ publisher = {University of Texas at Austin},
+ address = {Austin, TX, USA},
+ }
+
+@MASTERSTHESIS{Petrie:1986:NAD:12345,
+ author = {Petrie, Charles J.},
+ title = {New Algorithms for Dependency-Directed Backtracking (Master's thesis)},
+ year = {1986},
+ source = {http://www.ncstrl.org:8900/ncstrl/servlet/search?formname=detail\&id=oai%3Ancstrlh%3Autexas_cs%3AUTEXAS_CS%2F%2FAI86-33},
+ school = {University of Texas at Austin},
+ address = {Austin, TX, USA},
+ }
+
+
+
+
+@BOOK{book-minimal,
+   author = "Donald E. Knuth",
+   title = "Seminumerical Algorithms",
+   publisher = "Addison-Wesley",
+   year = "1981",
+}
+
+% incollection (has an editor, title, and possibly a booktitle)
+@INcollection{KA:2001,
+ author = {Kong, Wei-Chang},
+ Title = {The implementation of electronic commerce in SMEs in Singapore (as Incoll)},
+ booktitle = {E-commerce and cultural values},
+ year = {2001},
+ isbn = {1-59140-056-2},
+ pages = {51--74},
+ numpages = {24},
+ url = {http://portal.acm.org/citation.cfm?id=887006.887010},
+ acmid = {887010},
+ publisher = {IGI Publishing},
+ address = {Hershey, PA, USA},
+}
+
+
+% with bibfield 'type' before chapter (note no editor)
+@INBOOK{KAGM:2001,
+ author = {Kong, Wei-Chang},
+ type = {Name of Chapter:},
+ chapter = {The implementation of electronic commerce in SMEs in Singapore (Inbook-w-chap-w-type)},
+ title = {E-commerce and cultural values},
+ year = {2001},
+ isbn = {1-59140-056-2},
+ pages = {51--74},
+ numpages = {24},
+ url = {http://portal.acm.org/citation.cfm?id=887006.887010},
+ acmid = {887010},
+ publisher = {IGI Publishing},
+ address = {Hershey, PA, USA},
+}
+
+%%% Notes! This is because the atsign-INBOOK citation type specifies EITHER
+%%% editor or author, but not both. In my experiments with the harvard/dcu
+%%% bibtex style (and presumably this applies to other styles too), bibtex
+%%% ignores the editor information if author information exists in an
+%%% atsign-INBOOK entry. atsign-INCOLLECTION is far more commonly used in my references,
+%%% and in the absence of an editor I believe most bibtex styles will just
+%%% ommit the editor from the reference - the chapter information will not
+%%% end up in the in-text citation as you suggest it should be but at least
+%%% there is a place to put the editor if necessary.
+
+
+
+% was 'Inbook' -- changed to incollection - (editor is different to author) - need to tell Asad to codify as such.
+@incollection{Kong:2002:IEC:887006.887010,
+  author =      {Kong, Wei-Chang},
+  editor =      {Theerasak Thanasankit},
+  title =       {Chapter 9},
+  booktitle =   {E-commerce and cultural values (Incoll-w-text (chap 9) 'title')},
+  year =        {2002},
+  address =     {Hershey, PA, USA},
+  publisher =   {IGI Publishing},
+  url =         {http://portal.acm.org/citation.cfm?id=887006.887010},
+  pages =       {51--74},
+  numpages =    {24},
+  acmid =       {887010},
+  isbn =        {1-59140-056-2},
+  number =      "",
+  type =        "",
+  month =       "",
+  note =        "",
+}
+
+% incol when the chapter is 'text' - due to presence of editor (different to author)
+@incollection{Kong:2003:IEC:887006.887011,
+ author = {Kong, Wei-Chang},
+ title = {The implementation of electronic commerce in SMEs in Singapore (Incoll)},
+ booktitle = {E-commerce and cultural values},
+ editor = {Thanasankit, Theerasak},
+ year = {2003},
+ isbn = {1-59140-056-2},
+ pages = {51--74},
+ numpages = {24},
+ url = {http://portal.acm.org/citation.cfm?id=887006.887010},
+ acmid = {887010},
+ publisher = {IGI Publishing},
+ address = {Hershey, PA, USA},
+}
+
+% ------ test
+%incollection{Kong:2003:IEC:887006.887010,
+% author = {Kong, Wei-Chang},
+% chapter = {The implementation of electronic commerce in SMEs in Singapore (Incoll-text-in-chap)},
+% booktitle = {booktitle E-commerce and cultural values},
+% title =   {The title},
+% editor = {Thanasankit, Theerasak},
+% year = {2003},
+% isbn = {1-59140-056-2},
+% pages = {51--74},
+% numpages = {24},
+% url = {http://portal.acm.org/citation.cfm?id=887006.887010},
+% acmid = {887010},
+% publisher = {IGI Publishing},
+% address = {Hershey, PA, USA},
+%}
+
+
+% ---------
+
+
+
+
+
+% Need inbook with num in chapter
+
+% and inbook with number in chapter
+@InBook{Kong:2004:IEC:123456.887010,
+  author =      {Kong, Wei-Chang},
+  editor =      {Theerasak Thanasankit},
+  title =       {E-commerce and cultural values - (InBook-num-in-chap)},
+  chapter =     {9},
+  year =        {2004},
+  address =     {Hershey, PA, USA},
+  publisher =   {IGI Publishing},
+  url =         {http://portal.acm.org/citation.cfm?id=887006.887010},
+  pages =       {51--74},
+  numpages =    {24},
+  acmid =       {887010},
+  isbn =        {1-59140-056-2},
+  number =      "",
+  type =        "",
+  month =       "",
+  note =        "",
+}
+
+
+% and inbook with text in chapter
+@Inbook{Kong:2005:IEC:887006.887010,
+  author =      {Kong, Wei-Chang},
+  editor =      {Theerasak Thanasankit},
+  title =       {E-commerce and cultural values (Inbook-text-in-chap)},
+  chapter =     {The implementation of electronic commerce in SMEs in Singapore},
+  year =        {2005},
+  address =     {Hershey, PA, USA},
+  publisher =   {IGI Publishing},
+  url =         {http://portal.acm.org/citation.cfm?id=887006.887010},
+  type =        {Chapter:},
+  pages =       {51--74},
+  numpages =    {24},
+  acmid =       {887010},
+  isbn =        {1-59140-056-2},
+  number =      "",
+  month =       "",
+  note =        "",
+}
+
+
+% and inbook with a num and type field
+@Inbook{Kong:2006:IEC:887006.887010,
+  author =      {Kong, Wei-Chang},
+  editor =      {Theerasak Thanasankit},
+  title =       {E-commerce and cultural values (Inbook-num chap)},
+  chapter =     {22},
+  year =        {2006},
+  address =     {Hershey, PA, USA},
+  publisher =   {IGI Publishing},
+  url =         {http://portal.acm.org/citation.cfm?id=887006.887010},
+  type =        {Chapter (in type field)},
+  pages =       {51--74},
+  numpages =    {24},
+  acmid =       {887010},
+  isbn =        {1-59140-056-2},
+  number =      "",
+  month =       "",
+  note =        "",
+}
+
+
+% and incol coz we have a BLANK chapter - due to presence of editor
+%atIncollection{Kong:2006:IEC:887006.887011,
+%  author =     {Kong, Wei-Chang},
+%  editor =     {Theerasak Thanasankit},
+%  title =      "The title"
+%  booktitle =  {E-commerce and cultural values (Incol-coz-blank-chap)},
+%  year =       {2006},
+%  address =    {Hershey, PA, USA},
+%  publisher =  {IGI Publishing},
+%  url =        {http://portal.acm.org/citation.cfm?id=887006.887010},
+%  type =       {Type!},
+%  chapter =    {},
+%  pages =      {51--74},
+%  numpages =   {24},
+%  acmid =      {887010},
+%  isbn =       {1-59140-056-2},
+%  number =     "",
+%  month =      "",
+%  note =       "",
+%}
+
+@article{SaeediMEJ10,
+            author = {Mehdi Saeedi and Morteza Saheb Zamani and Mehdi Sedighi},
+            title = {A library-based synthesis methodology for reversible logic},
+            journal = {Microelectron. J.},
+            volume = {41},
+            number = {4},
+            month = apr,
+            year = {2010},
+            pages = {185--194},
+}
+
+@ARTICLE{SaeediJETC10,
+            author = {Mehdi Saeedi and Morteza Saheb Zamani and Mehdi Sedighi and Zahra Sasanian},
+            title = {Synthesis of Reversible Circuit Using Cycle-Based Approach},
+            journal = {J. Emerg. Technol. Comput. Syst.},
+            volume = {6},
+            number = {4},
+            month = dec,
+            year = {2010}
+            }
+
+% Asad's new version
+@article{Kirschmer:2010:AEI:1958016.1958018,
+ author = {Kirschmer, Markus and Voight, John},
+ title = {Algorithmic Enumeration of Ideal Classes for Quaternion Orders},
+ journal = {SIAM J. Comput.},
+ issue_date = {January 2010},
+ volume = {39},
+ number = {5},
+ month = jan,
+ year = {2010},
+ issn = {0097-5397},
+ pages = {1714--1747},
+ numpages = {34},
+ url = {http://dx.doi.org/10.1137/080734467},
+ doi = {https://doi.org/10.1137/080734467},
+ acmid = {1958018},
+ publisher = {Society for Industrial and Applied Mathematics},
+ address = {Philadelphia, PA, USA},
+ keywords = {ideal classes, maximal orders, number theory, quaternion algebras},
+}
+
+
+% incol due to presence of booktitle
+@incollection{Hoare:1972:CIN:1243380.1243382,
+ author = {Hoare, C. A. R.},
+ title = {Chapter II: Notes on data structuring},
+ booktitle = {Structured programming (incoll)},
+ editor = {Dahl, O. J. and Dijkstra, E. W. and Hoare, C. A. R.},
+ year = {1972},
+ isbn = {0-12-200550-3},
+ pages = {83--174},
+ numpages = {92},
+ url = {http://portal.acm.org/citation.cfm?id=1243380.1243382},
+ acmid = {1243382},
+ publisher = {Academic Press Ltd.},
+ address = {London, UK, UK},
+}
+
+% incol due to presence of booktitle
+@incollection{Lee:1978:TQA:800025.1198348,
+ author = {Lee, Jan},
+ title = {Transcript of question and answer session},
+ booktitle = {History of programming languages I (incoll)},
+ editor = {Wexelblat, Richard L.},
+ year = {1981},
+ isbn = {0-12-745040-8},
+ pages = {68--71},
+ numpages = {4},
+ url = {http://doi.acm.org/10.1145/800025.1198348},
+ doi = {http://doi.acm.org/10.1145/800025.1198348},
+ acmid = {1198348},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+% incol due to booktitle
+@incollection{Dijkstra:1979:GSC:1241515.1241518,
+ author = {Dijkstra, E.},
+ title = {Go to statement considered harmful},
+ booktitle = {Classics in software engineering (incoll)},
+ year = {1979},
+ isbn = {0-917072-14-6},
+ pages = {27--33},
+ numpages = {7},
+ url = {http://portal.acm.org/citation.cfm?id=1241515.1241518},
+ acmid = {1241518},
+ publisher = {Yourdon Press},
+ address = {Upper Saddle River, NJ, USA},
+}
+
+% incol due to booktitle
+@incollection{Wenzel:1992:TVA:146022.146089,
+ author = {Wenzel, Elizabeth M.},
+ title = {Three-dimensional virtual acoustic displays},
+ booktitle = {Multimedia interface design (incoll)},
+ year = {1992},
+ isbn = {0-201-54981-6},
+ pages = {257--288},
+ numpages = {32},
+ url = {http://portal.acm.org/citation.cfm?id=146022.146089},
+ doi = {10.1145/146022.146089},
+ acmid = {146089},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+% incol due to booktitle
+@incollection{Mumford:1987:MES:54905.54911,
+ author = {Mumford, E.},
+ title = {Managerial expert systems and organizational change: some critical research issues},
+ booktitle = {Critical issues in information systems research (incoll)},
+ year = {1987},
+ isbn = {0-471-91281-6},
+ pages = {135--155},
+ numpages = {21},
+ url = {http://portal.acm.org/citation.cfm?id=54905.54911},
+ acmid = {54911},
+ publisher = {John Wiley \& Sons, Inc.},
+ address = {New York, NY, USA},
+}
+
+@book{McCracken:1990:SSC:575315,
+ author = {McCracken, Daniel D. and Golden, Donald G.},
+ title = {Simplified Structured COBOL with Microsoft/MicroFocus COBOL},
+ year = {1990},
+ isbn = {0471514071},
+ publisher = {John Wiley \& Sons, Inc.},
+ address = {New York, NY, USA},
+}
+
+% Let's include Boris / BBeeton entries  (multi-volume works)
+
+@book {MR781537,
+    AUTHOR = {H{\"o}rmander, Lars},
+     TITLE = {The analysis of linear partial differential operators. {III}},
+    SERIES = {Grundlehren der Mathematischen Wissenschaften [Fundamental
+              Principles of Mathematical Sciences]},
+    VOLUME = {275},
+      NOTE = {Pseudodifferential operators},
+PUBLISHER = {Springer-Verlag},
+   ADDRESS = {Berlin, Germany},
+      YEAR = {1985},
+     PAGES = {viii+525},
+      ISBN = {3-540-13828-5},
+   MRCLASS = {35-02 (35Sxx 47G05 58G15)},
+  MRNUMBER = {781536 (87d:35002a)},
+MRREVIEWER = {Min You Qi},
+}
+
+@book {MR781536,
+    AUTHOR = {H{\"o}rmander, Lars},
+     TITLE = {The analysis of linear partial differential operators. {IV}},
+    SERIES = {Grundlehren der Mathematischen Wissenschaften [Fundamental
+              Principles of Mathematical Sciences]},
+    VOLUME = {275},
+      NOTE = {Fourier integral operators},
+PUBLISHER = {Springer-Verlag},
+   ADDRESS = {Berlin, Germany},
+      YEAR = {1985},
+     PAGES = {vii+352},
+      ISBN = {3-540-13829-3},
+   MRCLASS = {35-02 (35Sxx 47G05 58G15)},
+  MRNUMBER = {781537 (87d:35002b)},
+MRREVIEWER = {Min You Qi},
+}
+
+%%%%%%%%%%%%%%%%%%%%%% Start of Aptara sample bib entries
+
+% acmsmall-sam.bib
+@InProceedings{Adya-01,
+  author        = {A. Adya and P. Bahl and J. Padhye and A.Wolman and L. Zhou},
+  title         = {A multi-radio unification protocol for {IEEE} 802.11 wireless networks},
+  booktitle     = {Proceedings of the IEEE 1st International Conference on Broadnets Networks (BroadNets'04)},
+  publisher     = "IEEE",
+  address       = "Los Alamitos, CA",
+  year          = {2004},
+  pages         = "210--217"
+}
+
+@article{Akyildiz-01,
+  author        = {I. F. Akyildiz and W. Su and Y. Sankarasubramaniam and E. Cayirci},
+  title         = {Wireless Sensor Networks: A Survey},
+  journal       = {Comm. ACM},
+  volume        = 38,
+  number        = "4",
+  year          = {2002},
+  pages         = "393--422"
+}
+
+@article{Akyildiz-02,
+  author        = {I. F. Akyildiz and T. Melodia and K. R. Chowdhury},
+  title         = {A Survey on Wireless Multimedia Sensor Networks},
+  journal       = {Computer Netw.},
+  volume        = 51,
+  number        = "4",
+  year          = {2007},
+  pages         = "921--960"
+}
+
+@InProceedings{Bahl-02,
+  author        = {P. Bahl and R. Chancre and J. Dungeon},
+  title         = {{SSCH}: Slotted Seeded Channel Hopping for Capacity Improvement in {IEEE} 802.11 Ad-Hoc Wireless Networks},
+  booktitle     = {Proceeding of the 10th International Conference on Mobile Computing and Networking (MobiCom'04)},
+  publisher     = "ACM",
+  address       = "New York, NY",
+  year          = {2004},
+  pages         = "112--117"
+}
+
+@misc{CROSSBOW,
+  key       = {CROSSBOW},
+  title     = {{XBOW} Sensor Motes Specifications},
+  note      = {http://www.xbow.com},
+  year      = 2008
+}
+@article{Culler-01,
+  author        = {D. Culler and D. Estrin and M. Srivastava},
+  title         = {Overview of Sensor Networks},
+  journal       = {IEEE Comput.},
+  volume        = 37,
+  number        = "8 (Special Issue on Sensor Networks)",
+  publisher     = "IEEE",
+  address       = "Los Alamitos, CA",
+  year          = {2004},
+  pages         = "41--49"
+}
+
+@misc{Harvard-01,
+    key         = {Harvard CodeBlue},
+    title       = {{CodeBlue}: Sensor Networks for Medical Care},
+    note        = {http://www.eecs.harvard.edu/mdw/ proj/codeblue/},
+    year        = 2008
+}
+
+@InProceedings{Natarajan-01,
+    author      = {A. Natarajan and M. Motani and B. de Silva and K. Yap and K. C. Chua},
+    title       = {Investigating Network Architectures for Body Sensor Networks},
+    booktitle   = {Network Architectures},
+    editor      = {G. Whitcomb and P. Neece},
+    publisher   = "Keleuven Press",
+    address     = "Dayton, OH",
+    year        = {2007},
+    pages       = "322--328",
+    eprint      = "960935712",
+    primaryclass = "cs",
+}
+
+@techreport{Tzamaloukas-01,
+  author        = {A. Tzamaloukas and J. J. Garcia-Luna-Aceves},
+  title         = {Channel-Hopping Multiple Access},
+  number =        {I-CA2301},
+  institution =   {Department of Computer Science, University of California},
+  address =       {Berkeley, CA},
+  year          = {2000}
+}
+
+@BOOK{Zhou-06,
+  author        = {G. Zhou and J. Lu and C.-Y. Wan and M. D. Yarvis and J. A. Stankovic},
+  title         = {Body Sensor Networks},
+  publisher     = "MIT Press",
+  address       = "Cambridge, MA",
+  year          = {2008}
+}
+
+@mastersthesis{ko94,
+author = "Jacob Kornerup",
+title = "Mapping Powerlists onto Hypercubes",
+school = "The University of Texas at Austin",
+note = "(In preparation)",
+year = "1994"}
+%month = "dec",}
+
+@PhdThesis{gerndt:89,
+  author =       "Michael Gerndt",
+  title =        "Automatic Parallelization for Distributed-Memory
+                  Multiprocessing Systems",
+  school =       "University of Bonn",
+  year =         1989,
+  address =      "Bonn, Germany",
+  month =        dec
+}
+
+@article{6:1:1,
+author = "J. E. {Archer, Jr.} and R. Conway and F. B. Schneider",
+title = "User recovery and reversal in interactive systems",
+journal = "ACM Trans. Program. Lang. Syst.",
+volume =  "6",
+number = "1",
+month = jan,
+year = 1984,
+pages = "1--19"}
+
+@article{7:1:137,
+author = "D. D. Dunlop and V. R. Basili",
+title = "Generalizing specifications for uniformly implemented loops",
+journal = "ACM Trans. Program. Lang. Syst.",
+volume =  "7",
+number = "1",
+month = jan,
+year = 1985,
+pages = "137--158"}
+
+@article{7:2:183,
+author = "J. Heering and P. Klint",
+title = "Towards monolingual programming environments",
+journal = "ACM Trans. Program. Lang. Syst.",
+volume =  "7",
+number = "2",
+month = apr,
+year = 1985,
+pages = "183--213"}
+
+@book{knuth:texbook,
+author = "Donald E. Knuth",
+title = "The {\TeX{}book}",
+publisher = "Addison-Wesley",
+address = "Reading, MA.",
+year = 1984}
+
+@article{6:3:380,
+author = "E. Korach and D.  Rotem and N. Santoro",
+title = "Distributed algorithms for finding centers and medians in networks",
+journal = "ACM Trans. Program. Lang. Syst.",
+volume =  "6",
+number = "3",
+month = jul,
+year = 1984,
+pages = "380--401"}
+
+@book{lamport:latex,
+author = "Leslie Lamport",
+title = "\it {\LaTeX}: A Document Preparation System",
+publisher = "Addison-Wesley",
+address = "Reading, MA.",
+year = 1986}
+
+@article{7:3:359,
+author = "F. Nielson",
+title = "Program transformations in a denotational setting",
+journal = "ACM Trans. Program. Lang. Syst.",
+volume =  "7",
+number = "3",
+month = jul,
+year = 1985,
+pages = "359--379"}
+
+%testing
+@BOOK{test,
+   author = "Donald E. Knuth",
+   title = "Seminumerical Algorithms",
+   volume = 2,
+   series = "The Art of Computer Programming",
+   publisher = "Addison-Wesley",
+   address = "Reading, MA",
+   edition = "2nd",
+   month = "10~" # jan,
+   year = "1981",
+}
+
+@inproceedings{reid:scribe,
+author = "Brian K. Reid",
+title = "A high-level approach to computer document formatting",
+booktitle = "Proceedings of the 7th Annual Symposium on Principles of
+  Programming Languages",
+month = jan,
+year = 1980,
+publisher = "ACM",
+address = "New York",
+pages = "24--31"}
+
+@article{Zhou:2010:MMS:1721695.1721705,
+ author = {Zhou, Gang and Wu, Yafeng and Yan, Ting and He, Tian and Huang, Chengdu and Stankovic, John A. and Abdelzaher, Tarek F.},
+ title = {A multifrequency MAC specially designed for wireless sensor network applications},
+ journal = {ACM Trans. Embed. Comput. Syst.},
+ issue_date = {March 2010},
+ volume = 9,
+ number = 4,
+ month = {April},
+ year = 2010,
+ issn = {1539-9087},
+ pages = {39:1--39:41},
+ articleno = 39,
+ numpages = 41,
+ url = {http://doi.acm.org/10.1145/1721695.1721705},
+ doi = {10.1145/1721695.1721705},
+ acmid = 1721705,
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Wireless sensor networks, media access control, multi-channel, radio interference, time synchronization},
+}
+
+
+@online{TUGInstmem,
+  key =          {TUG},
+  year  =        2017,
+  title =        "Institutional members of the {\TeX} Users Group",
+  url =          "http://wwtug.org/instmem.html",
+  lastaccessed = "May 27, 2017",
+}
+
+@online{CTANacmart,
+  author =    {Boris Veytsman},
+  title =  {acmart---{C}lass for typesetting publications of {ACM}},
+  url =    {http://www.ctan.org/pkg/acmart},
+  lastaccessed = {May 27, 2017}
+  }
+
+@ARTICLE{bowman:reasoning,
+    author = {Bowman, Mic and Debray, Saumya K. and Peterson, Larry L.},
+    title = {Reasoning About Naming Systems},
+    journal = {ACM Trans. Program. Lang. Syst.},
+    volume = {15},
+    number = {5},
+    pages = {795-825},
+    month = {November},
+    year = {1993},
+    doi = {10.1145/161468.161471},
+}
+
+@ARTICLE{braams:babel,
+    author = {Braams, Johannes},
+    title = {Babel, a Multilingual Style-Option System for Use with LaTeX's Standard Document Styles},
+    journal = {TUGboat},
+    volume = {12},
+    number = {2},
+    pages = {291-301},
+    month = {June},
+    year = {1991},
+}
+
+@INPROCEEDINGS{clark:pct,
+  AUTHOR = "Malcolm Clark",
+  TITLE = "Post Congress Tristesse",
+  BOOKTITLE = "TeX90 Conference Proceedings",
+  PAGES = "84-89",
+  ORGANIZATION = "TeX Users Group",
+  MONTH = "March",
+  YEAR = {1991}
+}
+
+@ARTICLE{herlihy:methodology,
+    author = {Herlihy, Maurice},
+    title = {A Methodology for Implementing Highly Concurrent Data Objects},
+    journal = {ACM Trans. Program. Lang. Syst.},
+    volume = {15},
+    number = {5},
+    pages = {745-770},
+    month = {November},
+    year = {1993},
+    doi = {10.1145/161468.161469},
+}
+
+@BOOK{salas:calculus,
+  AUTHOR = "S.L. Salas and Einar Hille",
+  TITLE = "Calculus: One and Several Variable",
+  PUBLISHER = "John Wiley and Sons",
+  ADDRESS = "New York",
+  YEAR = "1978"
+}
+
+@MANUAL{Fear05,
+  title =        {Publication quality tables in {\LaTeX}},
+  author =       {Simon Fear},
+  month =        {April},
+  year =         2005,
+  note =         {\url{http://www.ctan.org/pkg/booktabs}}
+}
+
+@Manual{Amsthm15,
+  title =        {Using the amsthm Package},
+  organization = {American Mathematical Society},
+  month =        {April},
+  year =         2015,
+  note =         {\url{http://www.ctan.org/pkg/amsthm}}
+}
+
+@inproceedings{peng2018optimus,
+  title={Optimus: an efficient dynamic resource scheduler for deep learning clusters},
+  author={Peng, Yanghua and Bao, Yixin and Chen, Yangrui and Wu, Chuan and Guo, Chuanxiong},
+  booktitle={Proceedings of the Thirteenth EuroSys Conference},
+  pages={3},
+  year={2018},
+  organization={ACM}
+}
+
+@article{qiao2017litz,
+  title={Litz: An Elastic Framework for High-Performance Distributed Machine Learning},
+  author={Qiao, Aurick and Aghayev, Abutalib and Yu, Weiren and Chen, Haoyang and Ho, Qirong and Gibson, Garth A and Xing, Eric P},
+  year={2017}
+}
+
+@inproceedings{zhang2017slaq,
+  title={SLAQ: quality-driven scheduling for distributed machine learning},
+  author={Zhang, Haoyu and Stafman, Logan and Or, Andrew and Freedman, Michael J},
+  booktitle={Proceedings of the 2017 Symposium on Cloud Computing},
+  pages={390--404},
+  year={2017},
+  organization={ACM}
+}
+
+@article{hong2017gpu,
+  title={GPU virtualization and scheduling methods: A comprehensive survey},
+  author={Hong, Cheol-Ho and Spence, Ivor and Nikolopoulos, Dimitrios S},
+  journal={ACM Computing Surveys (CSUR)},
+  volume={50},
+  number={3},
+  pages={35},
+  year={2017},
+  publisher={ACM}
+}

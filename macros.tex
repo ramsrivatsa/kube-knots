@@ -1,0 +1,50 @@
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+  \node[shape=circle,draw,fill=black,text=white,font=\bf,inner sep=0.5pt] (char)
+  {\scriptsize#1};
+}}
+
+\newcommand*\circledwhite[1]{\tikz[baseline=(char.base)]{
+  \node[shape=circle,draw,fill=white,text=black,font=\bf,inner sep=0.5pt] (char)
+  {\scriptsize#1};
+}}
+
+\newcommand{\putsec}[2]{\vspace{-0.0in}\section{#2}\label{sec:#1}\vspace{-0.0in}}
+\newcommand{\putssec}[2]{\vspace{-0.0in}\subsection{#2}\label{ssec:#1}\vspace{-0.0in}}
+\newcommand{\putsssec}[2]{\vspace{-0.0in}\subsubsection{#2}\label{sssec:#1}\vspace{-0.0in}}
+%\newcommand{\putsssecX}[1]{\vspace{0.0in}\subsubsection*{#1}\vspace{0.0in}}
+\newcommand{\putsssecX}[1]{\vspace{0.0in}\noindent\textbf{#1:}}
+
+\newcommand{\figref}[1]{Figure~\ref{fig:#1}}
+\newcommand{\eqnref}[1]{Equation~\ref{eq:#1}}
+\newcommand{\tabref}[1]{Table~\ref{tab:#1}}
+\newcommand{\secref}[1]{Section~\ref{sec:#1}}
+\newcommand{\ssecref}[1]{Section~\ref{ssec:#1}}
+\newcommand{\sssecref}[1]{Section~\ref{sssec:#1}}
+
+\newcommand{\COMMENT}[1]{#1}
+\newcommand{\prash}[1]{\COMMENT{\textcolor{blue}{\sf Prash: #1}}}
+\newcommand{\ashu}[1]{\COMMENT{\textcolor{green}{\sf Ashutosh: #1}}}
+\newcommand{\nachi}[1]{\COMMENT{\textcolor{green}{\sf Nachi: #1}}}
+\newcommand{\jash}[1]{\COMMENT{\textcolor{green}{\sf Jashwant: #1}}}
+\newcommand{\das}[1]{\COMMENT{\textcolor{red}{\sf Dr.Das: #1}}}
+\newcommand{\mahmut}[1]{\COMMENT{\textcolor{red}{\sf Dr.Kandemir: #1}}}
+\newcommand\pras[1]{\textcolor{Green}{{\bf Prasanna:} #1}}
+\newcommand\bsharma[1]{\textcolor{red}{{\bf Bikash:} #1}}
+\newcommand{\todo}[1]{\COMMENT{{\color{red}\sf\bfseries #1}}}
+\makeatletter
+\renewcommand{\p@subsection}{}
+\renewcommand{\p@subsubsection}{}
+\makeatother
+
+\renewcommand{\footnoterule}{
+  \kern -3pt
+  \hrule width 0.49\textwidth height 1pt
+  \kern 2pt
+}
+
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\ignore}[1]{}
+
+% Uncomment this to remove the inline comments
+%\renewcommand{\COMMENT}[1]{}

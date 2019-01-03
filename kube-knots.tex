@@ -1,0 +1,192 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template for USENIX papers.
+%
+% History:
+%
+% - TEMPLATE for Usenix papers, specifically to meet requirements of
+%   USENIX '05. originally a template for producing IEEE-format
+%   articles using LaTeX. written by Matthew Ward, CS Department,
+%   Worcester Polytechnic Institute. adapted by David Beazley for his
+%   excellent SWIG paper in Proceedings, Tcl 96. turned into a
+%   smartass generic template by De Clarke, with thanks to both the
+%   above pioneers. Use at your own risk. Complaints to /dev/null.
+%   Make it two column with no page numbering, default is 10 point.
+%
+% - Munged by Fred Douglis <douglis@research.att.com> 10/97 to
+%   separate the .sty file from the LaTeX source template, so that
+%   people can more easily include the .sty file into an existing
+%   document. Also changed to more closely follow the style guidelines
+%   as represented by the Word sample file.
+%
+% - Note that since 2010, USENIX does not require endnotes. If you
+%   want foot of page notes, don't include the endnotes package in the
+%   usepackage command, below.
+% - This version uses the latex2e styles, not the very ancient 2.09
+%   stuff.
+%
+% - Updated July 2018: Text block size changed from 6.5" to 7"
+%
+% - Updated Dec 2018 for ATC'19:
+%
+%   * Revised text to pass HotCRP's auto-formatting check, with
+%     hotcrp.settings.submission_form.body_font_size=10pt, and
+%     hotcrp.settings.submission_form.line_height=12pt
+%
+%   * Switched from \endnote-s to \footnote-s to match Usenix's policy.
+%
+%   * \section* => \begin{abstract} ... \end{abstract}
+%
+%   * Make template self-contained in terms of bibtex entires, to allow
+%     this file to be compiled. (And changing refs style to 'plain'.)
+%
+%   * Make template self-contained in terms of figures, to
+%     allow this file to be compiled. 
+%
+%   * Added packages for hyperref, embedding fonts, and improving
+%     appearance.
+%   
+%   * Removed outdated text.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[letterpaper,twocolumn,10pt]{article}
+\usepackage{usenix}
+
+% to be able to draw some self-contained figs
+\usepackage{tikz}
+\usepackage{amsmath}
+
+% inlined bib file
+\usepackage{filecontents}
+
+
+\usepackage{mathptmx} % This is Times font
+\usepackage{comment}
+%\usepackage{fancyhdr}
+\usepackage[font={small}]{caption}
+\usepackage[normalem]{ulem}
+%\usepackage[hyphens]{url}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{pifont}
+ \usepackage{algorithm}
+\usepackage{xcolor}
+\usepackage{rotating}
+\usepackage{titling}
+% %\usepackage{algorithm2e}
+\usepackage[utf8]{inputenc}
+%\usepackage{fourier} 
+\usepackage{array}
+\usepackage{makecell}
+\renewcommand\theadalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[4pt]}
+\newcommand{\bikash}[1]{\COMMENT{\textcolor{blue}{\sf Bikash: #1}}}
+\usepackage{wrapfig}
+\usepackage[noend]{algpseudocode}
+\usepackage{float}
+\usepackage{color}
+% \usepackage[space]{cite}
+\usepackage{tabularx}
+\usepackage{subcaption} 
+% % \captionsetup{compatibility=false}
+% % \usepackage{tikz}
+% % \usepackage{url}
+% % \usepackage{soul}
+\usepackage{enumitem}
+% \usepackage{natbib}
+\usepackage{multirow}
+\frenchspacing
+\usepackage{microtype}
+
+\algdef{SE}[FOR]{NoDoFor}{EndFor}[1]{\algorithmicfor\ #1}{\algorithmicend\ \algorithmicfor}%
+\algdef{SE}[IF]{NoThenIf}{EndIf}[1]{\algorithmicif\ #1}{\algorithmicend\ \algorithmicif}%
+\input{macros}
+\usepackage{lipsum}
+\setlength{\textfloatsep}{9pt plus 1.0pt minus 3.0pt}
+\setlength{\floatsep}{5pt plus 1.0pt minus 2.0pt}
+\setlength{\intextsep}{5pt plus 1.0pt minus 2.0pt}
+\setlength{\droptitle}{-70pt}
+%\posttitle{\par\end{center} \vskip -5.5em}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+%-------------------------------------------------------------------------------
+
+%don't want date printed
+\date{}
+
+% make title bold and 14 pt font (Latex default is non-bold, 16 pt)
+\title{\Large \bf Kube-Knots: Dynamic Container Orchestration and Resource Management for GPU-based Datacenters}
+
+%%for single author (just remove % characters)
+%\author{
+%{\rm Your N.\ Here}\\
+%Your Institution
+%\and
+%{\rm Second Name}\\
+%Second Institution
+%% copy the following lines to add more authors
+%% \and
+%% {\rm Name}\\
+%%Name Institution
+%} % end author
+
+\maketitle
+
+%-------------------------------------------------------------------------------
+\begin{abstract}
+%-------------------------------------------------------------------------------
+Compute heterogeneity in the form of accelerators like GPUs and FPGAs is increasingly gaining prominence in modern datacenters. We observe that datacenter schedulers are agnostic of these emerging accelerators and their resource footprints, and thus, not well equipped to dynamically orchestrate them by providing fine-grained resource guarantees to latency sensitive applications. 
+%such user-facing queries as they are agnostic of the GPU usage metrics. 
+This also causes several resource fragmentation and interference issues leading to overall resource under-utilization. Furthermore, since these accelerators are not power proportional, proactive management of these resources by the cluster-wide resource orchestrator is essential to keep the operational costs low and ensuring the Quality of Service (QoS).
+
+In this paper, we identify the challenges in developing a GPU-aware datacenter scheduler and explore the potential opportunities that arise by exposing GPU APIs to the datacenter scheduler. Based on our observations from Alibaba's cluster traces and real hardware GPU cluster experiments, we build \textit{Knots}, a GPU-aware resource orchestrator and integrate it with \textit{Kubernetes} container orchestrator. We evaluate three GPU-based scheduling techniques to schedule representative GPU workload mixes through \textit{Kube-Knots} on a ten node GPU cluster. Our proposed PP scheduler  improves both 50$^{th}$ and 90$^{th}$ percentile cluster-wide GPU utilization by up to 80\%. This leads to 33\% cluster-wide power savings on an average for three different workloads compared to Kubernetes's default scheduler. At the same time, this ensures the end-to-end QoS of latency critical GPU bound queries by reducing the QoS violation up to 53\% when compared to resource agnostic scheduler.
+\end{abstract}
+
+
+\section{INTRODUCTION} 
+\label{sec:intro}
+\input{1-introduction}
+%------------------------------------------------------------------------------------------------------------------
+\section{BACKGROUND AND MOTIVATION} 
+\label{sec:motivation}
+\input{2-motivation}
+%%------------------------------------------------------------------------------------------------------------------
+\section{KNOTS DESIGN AND INTEGRATION} 
+\label{sec:modeling}
+\input{3-modeling}
+%%------------------------------------------------------------------------------------------------------------------
+\section{GPU-AWARE SCHEDULING} 
+\label{sec:scheme}
+\input{4-scheme}
+%%------------------------------------------------------------------------------------------------------------------
+\section{EVALUATION METHODOLOGY}
+\label{sec:methodology}
+\input{5-methodology}
+%%------------------------------------------------------------------------------------------------------------------
+\section{RESULTS AND ANALYSIS} 
+\label{sec:results}
+\input{6-results}
+%%------------------------------------------------------------------------------------------------------------------
+%% \section{RELATED WORK AND DISCUSSION} 
+\section{RELATED WORK} 
+\label{sec:related}
+\input{7-related}
+%%------------------------------------------------------------------------------------------------------------------
+\section{CONCLUSION} 
+\label{sec:conclusion}
+\input{8-conclusion}
+
+%-------------------------------------------------------------------------------
+\bibliographystyle{plain}
+\bibliography{kube-knots}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%  LocalWords:  endnotes includegraphics fread ptr nobj noindent
+%%  LocalWords:  pdflatex acks

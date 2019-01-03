@@ -1,0 +1,66 @@
+
+
+GPU resource sharing and over-commitment in datacenters is an emerging research problem. We have done a comprehensive analysis of relevant scheduling frameworks, shown in Table \ref{tbl:related}. Prior works include techniques such as virtualization and runtime support for accelerator management which can be broadly classified into four categories.\\ 
+% The community is, however, divided into different design approaches.
+
+\noindent\textbf{Utilization-aware CPU schedulers:}
+There are several works that focus on guaranteeing QoS and CPU utilization without sacrificing the SLA of applications. Bubble-up \cite{Marsbubbleup} and Bubble-flux \cite{Yang:bubbleflux} perform safe co-location to avoid interference while improving chip multiprocessor utilization. Prior works such as \cite{Tang:2013:RRS:2451116.2451126} focuses more on resource contention on CPU's in terms of shared memory and shared caches to improve utilization. However, these techniques cannot be directly ported to accelerators. To the best of our knowledge, ours is the first work that considers the GPU's memory usage, bandwidth and SM utilization at the cluster-level to make scheduling and bin-packing decisions.
+% However none of the proposed techniques apply to non-preemptive hardware accelerators as the global memory bandwidth of GPU's is different from a CPU. 
+
+\noindent\textbf{Node-level GPU-aware scheduling:}
+Recent works ~\cite{gleeson2017heterogeneous,kang2017convgpu} have proposed docker-level container sharing solutions. In this approach, multiple containers can be made to fit in the same GPU as long as the active working set size of all the containers are within the GPU physical memory capacity. 
+% which is around 16GB even for NVIDIA's high-end GPUs like Pascal and Volta~\cite{volta}. 
+These scheduling techniques over-commit resources for individual containers to ensure crash free execution. This may lead to internal memory fragmentation as we show in Figure~\ref{fig:tf-frag}. We address this by predicting the resource usage and dynamically resizing the containers based on the future resource consumption projections.
+
+\noindent\textbf{GPU-aware runtime systems:}
+Researchers have proposed runtime changes to the GPU to enable better scheduling of the GPU tasks either by predicting task behavior or reordering queued tasks.
+Ukidave et al.~\cite{ukidave2016mystic} optimized for workloads which under-utilize the device memory and bandwidth. 
+Chen et al.~\cite{chen2016baymax} proposed Baymax, a runtime mechanism which does workload batching and kernel reordering to improve the GPU utilization.
+% are employed on the host which helps the overall system throughput by mitigating the interference across different kernels when multiple GPU applications run together. 
+Other techniques such as interference driven resource management proposed by Phull et al. \cite{Phull:2012:IRM:2287076.2287091}, predicts the interference on a GPU to do safe co-location of GPU tasks. They do not consider memory bandwidth contention nor over-commitment challenges as they assume sequential execution of the GPU tasks. 
+% Also they perform static profiling of an application to ensure safe co-locations.
+Most of these approaches aim to increase utilization of a individual GPU node and do not scale at the cluster level as they depend on offline training models for node-level run time prediction~\cite{chen2016baymax,ukidave2016mystic}. 
+% However, none of these approaches leverage the datacenter wide accelerator heterogeneity which could be achieved only at the resource orchestration layer. Also, both the approaches are at the node-level and have their own merits and demerits. 
+
+\begin{table}[t]
+\begin{center}
+\resizebox{0.48\textwidth}{!}{%
+ \begin{tabular}{||c | c | c | c |c | c | c ||} 
+ \hline
+ \textbf{Features} & \begin{turn}{90}Baymax \cite{chen2016baymax}\end{turn} & \begin{turn}{90}Prophet \cite{chen2017prophet}\end{turn} & \begin{turn}{90}Quasar \cite{delimitrou2014quasar}\end{turn} & \begin{turn}{90}Mystic \cite{ukidave2016mystic}\end{turn} & \begin{turn}{90}Bubble-Flux \cite{Yang:bubbleflux}\end{turn} & \begin{turn}{90}KubeKnots\end{turn} \\
+ \hline
+  \textbf{Cluster Level integration } & \xmark & \xmark & \xmark & \xmark & \xmark & {\cmark} \\  
+ \hline
+ \textbf{Workload consolidation} & \cmark & \cmark & \cmark & \cmark & \cmark & {\cmark} \\  
+ \hline
+ \textbf{QoS Prediction} & \xmark & \cmark & \cmark & \cmark & \xmark & \xmark \\
+ \hline
+ \textbf{Utilization Improvement} & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark \\
+ \hline
+  \textbf{Accelerator power aware} & \xmark & \xmark & \xmark & \xmark & \xmark & \cmark \\
+ \hline 
+ \textbf{Dynamic Orchestration} & \xmark & \xmark & \xmark & \xmark & \cmark & \cmark \\
+ \hline 
+ \textbf{Application memory resizing} & \xmark & \xmark & \xmark & \xmark & \xmark & \cmark \\
+ \hline 
+ \textbf{Application peak prediction} & \xmark & \xmark & \xmark & \xmark & \xmark & \cmark \\
+ \hline
+\end{tabular}}
+\end{center}
+
+  \caption{GPU-based scheduling features comparison.}
+  \label{tbl:related}
+  \vspace{-3mm}
+\end{table}
+
+\noindent\textbf{Hardware support for virtualizing GPUs:}
+There has been extensive work on providing hardware support for GPU virtualization ~\cite{Gupta:2011:PCS:2002181.2002184,hong2017gpu} and preemption~\cite{Park:2015:CCP:2694344.2694346,Sajjapongse:2013:PRE:2493123.2462911}. 
+% Thread preemption has been proposed to schedule threads for improved utilization selectively. 
+Gupta et al.~\cite{Gupta:2011:PCS:2002181.2002184} implemented a task queue in the hypervisor to allow virtualization and preemption of GPU tasks.
+Tanasic et al. \cite{Tanasic:2014:EPM:2665671.2665702}  proposed a technique
+that improves the performance of high priority processes by enabling preemptive scheduling on GPUs. Aguilera et al. \cite{6742976} proposed a technique to guarantee QoS of high priority tasks by spatially allocating them on more SMs in a GPU. All these techniques require vendors to add extra hardware extensions. Our proposed scheduler does not need any hardware level changes and are readily deployable in Commodity Off-The-Shelf datacenters. We believe ours is the first work at a cluster-level to identify the potential upsides for GPU utilization aware resource orchestration and scheduling (refer Table \ref{tbl:related}).
+% and do not work on commodity accelerators. 
+% Moreover, provisioning custom accelerators on a public cloud setting is not feasible. 
+
+% However offloading machine learning queries on to the cloud for inference. Since GPUs are non-preemptive, task reordering techniques would fail to work, and hence cannot guarantee the SLO of latency sensitive queries while sticking with the schedule order.
+
